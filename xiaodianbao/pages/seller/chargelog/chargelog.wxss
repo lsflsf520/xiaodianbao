@@ -1,0 +1,29 @@
+page{
+  background-color:#ebebeb;
+}
+.jl-tl{
+  overflow: hidden;
+  line-height: 95rpx;
+  padding: 0 36rpx;
+  border-bottom: 1px solid #dbdbdb;
+  background: #fff;
+}
+.jl-tl .cz-jeed{
+  float: left;
+  width: 40%;
+  font-size: 26rpx;
+  color: #666;
+  text-align: left;
+}
+.jl-tl .cz-sjds{
+  float: left;
+  width: 60%;
+  font-size: 26rpx;
+  color: #666;
+  text-align: right;
+}
+.ycsdd{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

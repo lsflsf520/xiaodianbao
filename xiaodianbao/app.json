@@ -1,0 +1,34 @@
+{
+  "pages": [
+
+    "pages/customer/award/award",
+    "pages/customer/couponbag/couponbag", 
+    "pages/customer/pay/pay",
+    "pages/customer/me/me",
+    "pages/customer/nearby/nearby",
+    
+    "pages/seller/index/index",
+    "pages/seller/couponstyle/couponstyle",
+    "pages/seller/couponedit/couponedit",
+    "pages/seller/xuanquan/xuanquan",
+    "pages/seller/couponbuy/couponbuy",
+    "pages/seller/shopedit/shopedit",
+    "pages/seller/shopdetail/shopdetail",
+    "pages/seller/tradelog/tradelog",
+    "pages/seller/chargelog/chargelog",
+    "pages/seller/wallet/wallet"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e14e43",
+    "navigationBarTitleText": "小店宝",
+    "navigationBarTextStyle": "white"
+  },
+  
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
+

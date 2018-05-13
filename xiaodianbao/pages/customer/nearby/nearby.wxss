@@ -1,0 +1,57 @@
+page{
+  background: #ebebeb;
+}
+.fj_dianp{
+  font-size: 24rpx;
+  color: #222;
+  line-height: 40rpx;
+  background: #fff;
+  padding: 0 36rpx;
+}
+.dp_cheh{
+background: #fff;
+display: flex;
+align-items: center;
+padding: 25rpx 36rpx;
+margin-top: 10rpx;
+  justify-content: space-between;
+}
+.dp_cheh image{
+  width: 114rpx;
+  height: 114rpx;
+  margin-left: 14rpx;
+  border: 1px solid #dbdbdb;
+  border-radius: 57rpx;
+}
+.xd_xinx .xi_top{
+  font-size: 30rpx;
+  color: #222;
+  line-height: 30rpx;
+}
+.xd_xinx .xi_cent{
+  font-size: 20rpx;
+  color: #222;
+  line-height: 20rpx;
+  margin-top: 24rpx;
+}
+.xd_xinx .xi_bot{
+  font-size: 20rpx;
+  color: #222;
+  line-height: 20rpx;
+  margin-top: 14rpx;
+}
+.xd_xinx{
+  padding-left: 28rpx; 
+}
+.tx_dianp{
+  display: flex;
+  align-items: center;
+}
+.qz_lia{
+  border: 1px solid #e14e43;
+  color: #e14e43;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+}

@@ -1,0 +1,28 @@
+<view class='qz_ongt'>
+  <view class='sm_zhek'>{{descp}}</view>
+ <block wx:for="{{couponTmpls}}">
+  <view class="qdys mrt16 {{item.tmplFileName}} {{(tmplStyle && tmplStyle == item.tmplFileName) || (!tmplStyle && tmpl_no==index) ? 'cdon' : '' }}" data-tmpl_no='{{index}}' data-tmplid='{{item.id}}' data-style_name='{{item.tmplFileName}}' bindtap='selectTmpl'>
+    <image class='hs_cbkxz' src='../../../images/ic_card_red.png'></image>
+    <image class='ds_bj' src="../../../images/{{item.tmplFileName}}.png"></image>
+    
+    <view class='left_zb'>
+      <view class='dszka'>
+        <text></text>9.8<text>折</text>
+      </view>
+      <view class='mdsy ycsdd'>满{{item.minAmount}}元使用</view>
+      <view class='dp_kz ycsdd'>*店面赠送*</view>
+    </view>
+    <view class='dp_cent'>
+      <view class='dp_cf'>
+        <image src='../../../images/dp_wt.png'></image>徐记海鲜店麓谷店</view>
+      <view class='sj_rq'>2018/03/05-2018/04/05</view>
+      <view class='xz_tz'>{{item.remark}}
+        <image src='../../../images/ic_more_down.png'></image>
+      </view>
+    </view>
+    <view class='lj_sy'>
+      <view class='sy_an'>立即使用</view>
+    </view>
+  </view>
+ </block>
+</view>

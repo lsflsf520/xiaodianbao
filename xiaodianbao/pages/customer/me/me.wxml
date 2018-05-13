@@ -1,0 +1,105 @@
+<view class="gr_toux">
+  <image class='dp_toux' src='{{currUser.headImg ? currUser.headImg : "../../../images/ic_pic_head.png"}}' bindtap='getMyInfo'></image>
+  <view class='dp_minc' bindtap='getMyInfo'>{{currUser.nickName ? currUser.nickName : "游客"}}</view>
+  <view class='wy_dianp' bindtap='toSellerPage'>
+    <block wx:if="{{!shopState}}">我有店铺 申请入驻</block>
+    <block wx:elif="{{shopState == 'PASSED'}}">管理我的店铺</block>
+    <block wx:elif="{{shopState == 'CHECKING'}}">店铺审核中</block>
+    <block wx:elif="{{shopState == 'REJECT'}}">店铺审核不通过</block>
+    <image src='../../../images/ic_more.png'></image>
+  </view>
+</view>
+<block wx:if="{{!currUser.phone}}">
+  <view class='fys_rongq mrt20'>
+    <view class='sj_haowz'>手机号</view>
+    <input placeholder='请输入有效的手机号'></input>
+    <view class='hq_yanzm'>获取验证码</view>
+  </view>
+  <view class='fys_rongq'>
+    <view class='sj_haowz'>验证码</view>
+    <input placeholder='请输入有效的手机号'></input>
+  </view>
+  <view class='fys_rongq' style='  justify-content: center;'>
+    <view class='yanz_shoj'>确定修改</view>
+    <view >
+    <button class='yanz_shoj zdhq' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">自动获取</button></view>
+  </view>
+</block>
+<block wx:if="{{currUser.phone}}">
+  <view class='fys_rongq mrt20' style='position: relative'>
+    <view class='sj_haowz'>手机号</view>
+    <input placeholder='请输入有效的手机号' value='1358888888'></input>
+    <view class='xg_jiannt'>修改
+      <image src='../../../images/ic_more_right.png'></image>
+    </view>
+  </view>
+</block>
+<!-- <view class='fys_rongq mrt20'>
+  <view class='sj_haowz'>住址</view>
+
+</view> -->
+<view class='dp_qc mrt20'>
+  <view class='zb_ahs'>住址</view>
+  <view class='hs_hb'>
+    <view class='kz_wck kz_wck2'>
+      <view class='xfcp'>
+        <image src='../../../images/dm_xx_ico.png'></image>
+        <picker bindchange="provinceChange" value="{{provIndex}}" range="{{provArr}}" range-key='name'>
+          <view class="picker">{{provArr[provIndex].name}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='kz_wck kz_wck2 kz_wck3' style="display:{{cityArr.length > 0 ? 'block' : 'none'}}">
+      <view class='xfcp'>
+        <image src='../../../images/dm_xx_ico.png'></image>
+        <picker bindchange="cityChange" value="{{cityIndex}}" range="{{cityArr}}" range-key='name'>
+          <view class="picker">{{cityArr[cityIndex].name}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class='kz_wck kz_wck2 kz_wck3' style="display:{{countyArr.length > 0 ? 'block' : 'none'}}">
+      <view class='xfcp'>
+        <image src='../../../images/dm_xx_ico.png'></image>
+        <picker bindchange="countyChange" value="{{countyIndex}}" range="{{countyArr}}" range-key='name'>
+          <view class="picker">{{countyArr[countyIndex].name}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="zz_save">保存</view>
+  </view>
+</view>
+<view class='xx_shez mrt20'>消息设置</view>
+<view class="fuwh {{userExtra.servMsg == 'Y' ? 'xz_tyhj':'' }}" data-fkfans="0" bindtap="djl_qu">
+    <view class='fw_shij' data-fkfans="0">
+      <view class='ij_xiaox' data-fkfans="0">服务号消息</view>
+      <view class='ij_zend' data-fkfans="0">9:00-21:00</view>
+    </view> 
+    <image class='sf_xuz' src='../../../images/ic_unsel.png' data-fkfans="0"></image>
+    <image class='sf_xuz2' src='../../../images/ic_sel_red.png' data-fkfans="0"></image>
+</view>
+<view class="fuwh {{userExtra.smsMsg == 'Y' ? 'xz_tyhj':'' }}" data-fkfans="1" bindtap="djl_qu">
+    <view class='fw_shij' data-fkfans="1">
+      <view class='ij_xiaox' data-fkfans="1">短信消息</view>
+      <view class='ij_zend' data-fkfans="1">9:00-21:00</view>
+    </view> 
+     <image class='sf_xuz' src='../../../images/ic_unsel.png' data-fkfans="1"></image>
+    <image class='sf_xuz2' src='../../../images/ic_sel_red.png' data-fkfans="1"></image>
+</view> 
+
+<!-- 底部菜单 -->
+<view class='gd_gaod'></view>
+<view class='db_caid'>
+  <view class='id_dyg1' bindtap='zxquanb'>
+    <image src='../../../images/ic_coupon_gray.png'></image>
+    <text>券包</text>
+  </view>
+  <view class='id_dyg2' bindtap='ljcouja'>
+    <image src='../../../images/ic_gift_gray.png'></image>
+    <text>抽奖</text>
+  </view>
+  <view class='id_dyg3 id_dyg'>
+    <image src='../../../images/ic_me_red.png'></image>
+    <text>我</text>
+  </view>
+</view>

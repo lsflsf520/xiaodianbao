@@ -1,0 +1,378 @@
+page{
+  background: #ebebeb;
+}
+.pc_ker .picker {
+  height: 100%;
+  line-height: 42rpx;
+  width: 100%;
+}
+.jt_dw {
+  position: absolute;
+  top: 0;
+  width: 35rpx;
+  right: 0;
+  height: 42rpx;
+}
+.pc_ker .sy_lzh {
+  display: inline-block;
+  height: 42rpx;
+  width: 270rpx;
+  border-radius: 5rpx;
+  background: #ededed;
+  font-size: 24rpx;
+  color: #222;
+  box-sizing: border-box;
+  padding-left: 14rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.xq_top{
+  padding:0 36rpx 12rpx;
+  background: #e14e43;
+}
+.zkhxj{
+  background: #fff;
+  overflow: hidden;
+  line-height: 80rpx;
+}
+.xtdq{
+  float: left;
+  width:50%;
+  text-align: center;
+}
+.gt_ys{
+  width: 200rpx;
+  display: inline-block;
+  font-size: 26rpx;
+  color: #666;
+}
+.dq_zsq{
+  line-height: 80rpxl;
+  border-bottom: 4rpx solid #e14e43;
+  color: #e14e43;
+}
+.qdys{
+  margin: 0 20rpx ;
+  height: 211rpx;
+  width: 710rpx;
+  position: relative;
+}
+.ds_bj{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+.left_zb{
+  position: absolute;
+  left:0;
+  top: 0;
+  height: 100%;
+  width: 197rpx;
+  border-right: 2px dashed #ebebeb;
+  text-align: center;
+}
+.dszka{
+  padding-top: 29rpx;
+  font-size: 84rpx;
+  color: #e14e43;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+}
+.dszka text{
+  font-size: 24rpx;
+  color: #e14e43;
+}
+.mdsy{
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin-top: 10rpx;
+  color: #e14e43;
+}
+.dp_kz{
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.ycsdd{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dp_cent{
+  position: absolute;
+  left: 200rpx;
+  top: 0;
+  height: 211rpx;
+  padding-left: 20rpx;
+}
+.dp_cf{
+  font-size: 30rpx;
+  color: #222;
+  line-height: 82rpx;
+  padding-top: 20rpx;
+}
+.dp_cf image{
+  float: left;
+  width: 82rpx;
+  height: 82rpx;
+  margin-right: 15rpx;
+  border-radius: 41rem;
+}
+.sj_rq{
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+  margin-top: 15rpx;
+
+}
+.xz_tz{
+  font-size: 20rpx;
+  color: #666;
+  line-height: 20rpx;
+  margin-top: 20rpx;
+  position: relative;
+  padding-right: 30rpx;
+  float: left;
+}
+.xz_tz image{
+  width: 22rpx;
+  height: 12rpx;
+  position: absolute;top: 4rpx;
+  right: 0;
+}
+.lj_sy{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 211rpx;
+  width: 138rpx;
+
+}
+.sy_an{
+  width: 120rpx;
+  line-height: 50rpx;
+  border: 2rpx solid #e14e43;
+  text-align: center;
+  font-size: 24rpx;
+  color: #e14e43;
+  border-radius: 10rpx;
+  position:absolute;
+  top: 50%;
+  margin-top: -25rpx;
+  left: 0;
+}
+.zkouq{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 45rpx;
+  height: 60rpx; 
+  font-size: 20rpx;
+  color:#fff;
+}
+.zkouq image{
+    position: absolute;
+  top:0;
+  left: 0;
+  width: 45rpx;
+  height: 60rpx; 
+   z-index: 4;
+}
+.zkouq text{
+    position: absolute;
+  top:0;
+  left: 0;
+  width: 30rpx;
+  height: 30rpx; 
+  line-height: 30rpx;
+  text-align: center;
+  z-index: 5;
+}
+.qdys1 .dszka{
+  color: #fff;
+} 
+.qdys1 .dszka text{
+  color: #fff;
+}
+.qdys1 .mdsy{
+  color: #fff;
+}
+.qdys1 .dp_kz{
+  color: #222;
+}
+.qdys1 .dp_cf{
+  color: #fff;
+}
+.qdys1 .sj_rq{
+  color: #fff;
+}
+.qdys1 .xz_tz{
+  color: #222;
+}
+.qdys1 .sy_an{
+  background: #fff;
+  border-color: #fff;
+  color: #e14e43;
+}
+.qdys1 .zkouq text{
+  color: #808080;
+}
+
+/*****滑动*******/
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.item, .item-active{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-top: 15rpx;
+}
+.txt{
+  width: 100%;
+  margin-right:0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  transform: translateX(90px); 
+  margin-left: -90px; 
+}
+.del{
+  background-color: orangered;
+  width: 80px;
+  color: #fff;
+  text-align: center;
+  transform: translateX(93px);
+  transition: all 0.4s;   
+  height:211rpx;
+  line-height: 211rpx;  
+}
+.del1{
+  font-size: 30rpx;
+  color: #fff;
+  background: #f39800;
+}
+.del2{
+  font-size: 30rpx;
+  color: #fff;
+  background: #009944;
+}
+.del3{
+  font-size: 30rpx;
+  color: #fff;
+  background: #e60012;
+}
+.del_cs{
+   display: flex; 
+}
+.item-active .txt{
+  transform: translateX(-140px); 
+}
+.item-active .del{
+  transform: translateX(-148px); 
+}
+
+.container {
+  width: 100%;
+}
+
+.sy_quand{
+  right: 118rpx;
+  bottom: 37rpx;
+  width: 133rpx;
+  padding-top: 1rpx;
+  display: block;
+  margin: 67rpx auto 0;
+}
+.tj_xinq{
+  width: 133rpx;
+  height: 75rpx;
+}
+.sd_yuq{
+  margin-top: 16rpx;
+  position: relative;
+}
+.sd_yuq view{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 20rpx;
+  color: #8a1007;
+  text-align: center;
+  line-height: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sd_yuq image{
+  width: 132rpx;
+  height: 57rpx;
+}
+.zekqunl{
+  display: none;
+}
+.xiansyc{
+  display: block;
+}
+.ba_dtc{
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  width: 500rpx;
+  margin-left: -250rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  z-index: 1000000000;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.nh_my{
+  padding-top: 90rpx;
+}
+.hs_bj{
+  width: 291rpx;
+  height: 223rpx;
+  display: block;
+  margin: 0 auto;
+}
+.myqy{
+  font-size: 30rpx;
+  color: #bbb;
+  text-align: center;
+  line-height: 31rpx;
+  padding-top: 30rpx;
+}
+
+.zkqy1 .dszka,.zkqy1 .dszka text,.zkqy1 .mdsy,.zkqy1 .dp_kz{
+  color: #39270f;
+}
+.zkqy2 .dszka,.zkqy2 .dszka text,.zkqy2 .mdsy,.zkqy2 .dp_kz{
+  color: #e14e43;
+}
+.zkqy3 .dszka,.zkqy3 .dszka text,.zkqy3 .mdsy,.zkqy3 .dp_kz{
+  color: #001b46;
+}
+.xjqys1 .dszka,.xjqys1 .dszka text,.xjqys1 .mdsy,.xjqys1 .dp_kz{
+  color: #ecd699;
+}
+.xjqys2 .dszka,.xjqys2 .dszka text,.xjqys2 .mdsy,.xjqys2 .dp_kz{
+  color: #fff;
+}
+.xjqys3 .dszka,.xjqys3 .dszka text,.xjqys3 .mdsy,.xjqys3 .dp_kz{
+  color: #e3ae69;
+}
+.xjqys1 .sy_an ,.xjqys2 .sy_an,.xjqys3 .sy_an{
+  border-color: #fff;
+  color: #fff;
+}

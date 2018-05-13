@@ -1,0 +1,141 @@
+<view class='qb_tb'>
+  <view class='flhide'>
+    <view class="ps_qhb" bindtap='toLottery'>拼手气 <image src='../../../images/ic_more_red.png'></image></view>
+  </view>
+  <view class='clre'></view>
+  <view class="jt_jr"><text>{{balance}}</text>元</view>
+  <view class='yj_fk' bindtap='yjfktcl'><image src='../../../images/ic_more_left.png'></image>意见反馈</view>
+</view>
+<view class="hs-anbj">
+  <view class='cz_an' bindtap='btcxs'>充  值</view>
+  <view class='tx_an' bindtap='yttxj'>提  现</view>
+</view>
+<view class='zk_jq'>
+  <view class='zk_wz'>折扣券</view>
+  <view>
+    <view class='xf_dsz' bindtap='itmclick'>
+      <view>已领取  {{discountCouponNum.leftNum ? discountCouponNum.leftNum : 0}}    张</view>
+      <view>已消费   200    张</view>
+      <view>本月剩余   {{discountCouponNum.leftNum ? discountCouponNum.leftNum : 0}}    张</view>
+    </view>
+    <view class='gm_dx'>购买</view>
+  </view>
+</view>
+<view class='zk_jq'>
+  <view class='zk_wz'>现金券</view>
+  <view>
+    <view class='xf_dsz' bindtap='itmclick'>
+      <view>已领取   813    张</view>
+      <view>已消费   200    张</view>
+      <view>本月剩余   {{cashCouponNum.leftNum ? cashCouponNum.leftNum : 0}}    张</view>
+    </view>
+    <view class='gm_dx'>购买</view>
+  </view>
+</view>
+<view class='hs_ct10'></view>
+<view class='wd-xd'>
+  <view class='xd-tp'>我的小店</view>
+<block wx:for='{{myShops}}'>
+  <view class='xd-zt' data-shopid='{{item.id}}' bindtap='toShopDetail' >
+    <image class='xd-mmtp' src='../../../images/ic_shop_c.png'></image>
+    <image class='xd-yxjt' src='../../../images/ic_more.png'></image>
+    <view class='xd-wzxx'>
+      <view class='dp-mcx ycxsdd'>{{item.fullName}}</view>
+      <view class='dp-dh ycxsdd'>{{item.kefu}}</view>
+      <view class='dp-dz ycxsdd'>湖南省长沙市岳麓区麓谷大道83号</view>
+    </view>
+  </view>
+</block>
+ 
+  <view class='tj-xd'>
+    <image src='../../../images/ic_add_s.png'></image>
+    点击添加一个小店
+  </view>
+</view>
+<view class='yl-cjl'></view>
+<!-- 弹窗 -->
+<view class="hs-zzcm " hidden='{{tcxsyc}}'></view>
+<view class="cz_tc" hidden='{{qxbl}}'>
+  <image class='qx-tc' bindtap='gbtcsj' src='../../../images/ic_back_b_l.png'></image>
+  <view class='cz-zx'>充值中心</view>
+  <view class='mi-bg'>
+    <view class="mi-td  {{czzxd==0 ? 'cz-ck' : ''}}" data-hsbk="0" bindtap="swichNav_cz"><text data-hsbk="0">10</text>元 <image src='../../../images/gl_qb_chongzhi_ct.png'></image></view>
+    <view class="mi-td  {{czzxd==1 ? 'cz-ck' : ''}}" data-hsbk="1" bindtap="swichNav_cz"><text data-hsbk="1">20</text>元 <image src='../../../images/gl_qb_chongzhi_ct.png'></image></view>
+    <view class="mi-td  {{czzxd==2 ? 'cz-ck' : ''}}" data-hsbk="2" bindtap="swichNav_cz"><text data-hsbk="2">50</text>元 <image src='../../../images/gl_qb_chongzhi_ct.png'></image></view>
+    <view class="mi-td  {{czzxd==3 ? 'cz-ck' : ''}}" data-hsbk="3" bindtap="swichNav_cz"><text data-hsbk="3">100</text>元 <image src='../../../images/gl_qb_chongzhi_ct.png'></image></view>
+    <view class="mi-td  {{czzxd==4 ? 'cz-ck' : ''}}" data-hsbk="4" bindtap="swichNav_cz"><text data-hsbk="4">200</text>元 <image src='../../../images/gl_qb_chongzhi_ct.png'></image></view>
+    <view class="mi-td  {{czzxd==5 ? 'cz-ck' : ''}}" data-hsbk="5" bindtap="swichNav_cz"><text data-hsbk="5">500</text>元 <image src='../../../images/gl_qb_chongzhi_ct.png'></image></view>
+  </view>
+   <view class='yl-rje'>
+    <text>元</text>
+    <input class='zj-srjr' placeholder='输入充值金额'/>
+  </view> 
+  <!-- data-cghsb 为自定义模拟充值的情况    true=成功   false为失败   弹窗框不同 -->
+  <view class='qd-an' data-cghsb='true' bindtap='bindcghsb'>
+    确  认
+  </view>
+  <view class='cz-djl' bindtap='tzczjl'>充值记录 <image class='xx-djt' src='../../../images/ic_more_down.png'></image></view>
+</view>
+<!-- 充值失败 -->
+<view class='cz-sbl' hidden="{{isShowsb}}">
+  <view class='cz-tbd'>充值失败！</view>
+  <image class='sb-dkl' src='../../../images/ic_fail.png'></image>
+  <view class='sb-qcs'>充值失败  请重试！</view>
+  <view class="gb-tp" bindtap='bindgbsb'>关闭</view>
+</view>
+<!-- 充值成功 -->
+<view class="hs-zzcm " hidden='{{czcglb}}'></view>
+<view class='cz-sbl' hidden="{{czcglb}}">
+  <view class='cz-tbd cz-tbd2'>充值成功！</view>
+  <image class='sb-dkl' src='../../../images/ic_succ.png'></image>
+  <view class='sb-qcs'>充值成功  感谢您的支持！</view>
+  <view class="gb-tp" bindtap='bindgbsd'>我知道了</view>
+</view>
+<!-- 余额提现 -->
+<!-- <view class="hs-zzcm " hidden='{{tcxsyc}}'></view> -->
+<view class="cz_tc" hidden='{{yetsck}}'>
+  <image class='qx-tc' bindtap='lygyeb' src='../../../images/ic_back_b_l.png'></image>
+  <view class='cz-zx'>余额提现</view>
+  <view class='dq_yezs'>100.00<text>元</text></view>
+  <view class='kt_xwz'>可提取金额</view>
+  <view class='yl-rje'>
+    <text>元</text>
+    <input class='zj-srjr' placeholder='输入提取金额'/>
+  </view>
+  <view class='tx_yets'>提现金额将进入当前微信账号余额中！</view>
+  <!-- data-cghsb 为自定义模拟充值的情况    true=成功   false为失败   弹窗框不同 -->
+  <view class='qd-an' data-cghsb='true' bindtap='bindcghsb'>
+    确  认
+  </view>
+  <view class='cz-djl' bindtap='tzczj2'>提现记录 <image class='xx-djt' src='../../../images/ic_more_down.png'></image></view>
+</view>
+<!-- 意见反馈 -->
+<!-- <view class="hs-zzcm " hidden='{{tcxsyc}}'></view> -->
+<view class="cz_tc cz_tc_yj" hidden='{{yjxfk}}'>
+  <image class='qx-tc' bindtap='gbzjyj' src='../../../images/ic_back_b_l.png'></image>
+  <view class='cz-zx'>意见反馈</view>
+  <input class='sr_sjhm' placeholder='请输入您的手机号'/>
+  <textarea class='dh_wby' maxlength='-1' placeholder="请输入您的宝贵意见，我们会尽快给您反馈" /> 
+  <!-- data-cghsb 为自定义模拟充值的情况    true=成功   false为失败   弹窗框不同 -->
+  <view class='qd-an' bindtap='gbzjyj'>
+    确  认
+  </view>
+</view>
+
+<view style='height:10rpx'></view>
+<!-- 底部菜单 -->
+<view class='gd_gaod'></view>
+<view class='db_caid'>
+  <view class='id_dyg1' bindtap='toXq'>
+    <image src='../../../images/ic_coupon_gray.png'></image>
+    <text>选券</text>
+  </view>
+  <view class='id_dyg2' bindtap='toIndex'>
+    <image src='../../../images/ic_home_gray.png'></image>
+    <text>首页</text>
+  </view>
+  <view class='id_dyg3 id_dyg' bindtap='toWallet'>
+    <image src='../../../images/ic_wallet.png'></image>
+    <text>钱包</text>
+  </view>
+</view>

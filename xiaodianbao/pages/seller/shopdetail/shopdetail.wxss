@@ -1,0 +1,139 @@
+page{
+  position: relative;
+  background: #ebebeb;
+}
+.ys_shwc{
+  position: absolute;
+  top: 126rpx;
+  right: 52rpx;
+  width: 225rpx;
+  height: 226rpx;
+}
+.db_dpt{
+  padding: 20rpx 0;
+  text-align: center;
+  background: #fff;
+}
+.db_dpt image{
+  width: 152rpx;
+  height: 152rpx;
+  display: inline-block;
+}
+.dp_xx{
+  margin-top: 10rpx;
+  background: #fff;
+  padding: 0 37rpx;
+}
+.dp_qc{
+  border-bottom: 1rpx solid #ebebeb;
+  line-height: 90rpx;
+  overflow: hidden;
+}
+.zb_ahs{
+  font-size: 26rpx;
+  color: #666;
+  float: left;
+  width: 140rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hs_hb{
+    font-size: 30rpx;
+  color: #222;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 140rpx;
+}
+.yi_yzz{
+  width: 160rpx;
+  height: 58rpx;
+  border: 1rpx solid #dbdbdb;
+  display: block;
+  margin-top: 16rpx;
+}
+.kz_wck{
+  width: 50%;
+  float: left;
+  height: 90rpx;
+}
+.xfcp{
+  float: left;
+  max-width: 100%;
+  height: 90rpx;
+   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 45rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.xfcp image{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -6rpx;
+  vertical-align: middle;
+  margin-left: 23rpx;
+  width: 22rpx;
+  height: 12rpx;
+}
+.ts_sdw{
+  padding: 19rpx 37rpx;
+  background: #fff;
+  margin-top: 10rpx;
+}
+.jz_dw{
+  font-size: 24rpx;
+  color: #222;
+  line-height: 24rpx;
+  padding-bottom: 14rpx;
+  text-align: center;
+}
+.dt_dwzs{
+  width: 676rpx;
+  height: 407rpx;
+  display: block;
+  margin: 0 auto;
+}
+.tx_tjr{
+  padding: 0 37rpx;
+  font-size: 24rpx;
+  color: #707070;
+  line-height: 57rpx;
+  background: #fff;
+  margin-top: 10rpx;
+}
+.sm_rwm{
+  padding: 20rpx 37rpx;
+  background: #fff;
+  margin-top: 10rpx;
+}
+.sm_wz{
+  font-size: 24rpx;
+  line-height: 25rpx;
+  color: #222;
+  padding-bottom: 20rpx;
+  text-align: center;
+}
+.sc_rwm{
+  width: 302rpx;
+  height: 302rpx;
+  display: block;
+  margin: 0 auto;
+}
+.hs_bjt{
+  padding: 52rpx 0 84rpx;
+  background: #ebebeb;
+}
+.hs_xgl{
+  line-height: 75rpx;
+  width: 600rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background: #e14e43;
+}

@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<view class='xbd_sy'>
+  <image class='xd_lg' src='../../../images/ic_shop_c.png'></image>
+  <view class='pc_ker'>
+    <view class="section sy_lzh">
+      <image class='jt_dw' src='../../../images/gl_home_03.png'></image>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class='hs_ch15'></view>
+<view class='yk_tjy'>
+  <view class='zk_jzl'>折扣券总览</view>
+  <!-- <view class='sx_tsxz'>
+    <view class='pf_bj'>30天</view>
+    <view class='pf_bj'>60天</view>
+    <view class='pf_bj'>1年</view>
+  </view> -->
+    <!--pages/home/home.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">30天</view>
+  <view class="swiper-tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">60天</view>
+  <view class="swiper-tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">1年</view>
+</view>
+ 
+<!-- <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 80}}px" bindchange="bindChange">
+  <swiper-item>
+   <view>热门</view>
+  </swiper-item>
+  <swiper-item>
+   <view>关注</view>
+  </swiper-item>
+  <swiper-item>
+   <view>好友</view>
+  </swiper-item>
+</swiper> -->
+  
+  <view class='ke_zxt'>
+    <image class='zxt_ce' src='../../../images/gl_home_06.png'></image>
+  </view>
+  <view class='ck_mxt' bindtap='itmclick'>查看明细</view>
+</view>
+<view class='hs_ch15'></view>
+<view class='yk_tjy'>
+  <view class='zk_jzl'>现金券总览</view>
+  <!-- <view class='sx_tsxz'>
+    <view class='pf_bj'>30天</view>
+    <view class='pf_bj'>60天</view>
+    <view class='pf_bj'>1年</view>
+  </view> -->
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTabr==0 ? 'on' : ''}}" data-currentsr="0" bindtap="swichNavr">30天</view>
+  <view class="swiper-tab-item {{currentTabr==1 ? 'on' : ''}}" data-currentsr="1" bindtap="swichNavr">60天</view>
+  <view class="swiper-tab-item {{currentTabr==2 ? 'on' : ''}}" data-currentsr="2" bindtap="swichNavr">1年</view>
+</view>
+
+  <view class='ke_zxt'>
+    <image class='zxt_ce' src='../../../images/gl_home_06.png'></image>
+  </view>
+  <view class='ck_mxt' bindtap='itmclick'>查看明细</view>
+</view>
+
+<view style='height:10rpx'></view>
+<!-- 底部菜单 -->
+<view class='gd_gaod'></view>
+<view class='db_caid'>
+  <view class='id_dyg1 ' bindtap='toXq'>
+    <image src='../../../images/ic_coupon_gray.png'></image>
+    <text>选券</text>
+  </view>
+  <view class='id_dyg2 id_dyg' bindtap='toIndex'>
+    <image src='../../../images/ic_home.png'></image>
+    <text>首页</text>
+  </view>
+  <view class='id_dyg3' bindtap='toWallet'>
+    <image src='../../../images/ic_wallet_gray.png'></image>
+    <text>钱包</text>
+  </view>
+</view>

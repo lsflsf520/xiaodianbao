@@ -1,0 +1,23 @@
+<view class='fj_dianp'>附近店铺</view>
+<view class='dp_cheh'>
+  <view class='tx_dianp'>
+    <image src='../../../images/ic_shop_c.png'></image>
+    <view class='xd_xinx'>
+      <view class='xi_top'>徐记海鲜店麓谷店</view>
+      <view class='xi_cent'>400-800-9000</view>
+      <view class='xi_bot'>湖南省长沙市岳麓区麓谷大道83号</view>
+    </view>
+  </view>
+  <view class='qz_lia'>去这里</view>
+</view>
+<view class='dp_cheh'>
+  <view class='tx_dianp'>
+    <image src='../../../images/ic_shop_c.png'></image>
+    <view class='xd_xinx'>
+      <view class='xi_top'>徐记海鲜店麓谷店</view>
+      <view class='xi_cent'>400-800-9000</view>
+      <view class='xi_bot'>湖南省长沙市岳麓区麓谷大道83号</view>
+    </view>
+  </view>
+  <view class='qz_lia'>去这里</view>
+</view>

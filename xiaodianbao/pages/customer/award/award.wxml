@@ -1,0 +1,45 @@
+<view class='db_bais'>
+  <image src='../../../images/ic_shop_c.png'></image>
+  <view class='dp_minc'>{{shop.name}}</view>
+  <view class='dp_dinz'>{{shop.addr}}</view>
+</view>
+<view class='fs_beij'>
+  <view class="bs_couj {{xyinc ? 'kzkg' : ''}}">
+    <!-- <view class='xd_kap'> -->
+
+   <block wx:for="{{coupons}}" wx:key="item">
+    <view class="lw_zhenb lw_zhenb{{index + 1}} {{turn ? 'nb_chad' : ''}}  {{anmSwitch ? 'nb_chad2' : ''}} {{wyblz==1 ? 'cdgc' : ''}} {{hideCoupon ? 'ygxgg' : ''}}" bindtap='recvCoupon' data-couponid="{{item.id}}" >
+      <image class='lw_beij' src='../../../images/ic_card_back.png'></image>
+      <image class='lw_beij2' src='../../../images/ic_card_front.png'></image>
+      <view class='lh_text'>
+        <view class='xj_ldu'>{{item.discount}}<text>{{item.unit}}</text>
+        </view>
+        <view class='ms_jian'>满{{item.minAmount}}元使用</view>
+      </view>
+    </view>
+   </block>
+     
+    <!-- <image class='ks_btn' src='../../../images/btn_begin_.png'></image> -->
+    <view class='ks_btn' bindtap='startAnimation' hidden='{{hideStartBtn}}'>{{time}}</view> 
+    <view class="gxhuod {{recved ? 'zhijzs':''}}">恭喜获得一张优惠券！</view>
+    <view class="qshiyong {{recved ? 'zhijzs':''}}">去使用</view>
+  </view>
+  <view class='yx_guiz'>游戏说明</view>
+</view>
+<view style='height:10rpx'></view>
+<!-- 底部菜单 -->
+<view class='gd_gaod'></view>
+<view class='db_caid'>
+  <view class='id_dyg1' bindtap='zxquanb'>
+    <image src='../../../images/ic_coupon_gray.png'></image>
+    <text>券包</text>
+  </view>
+  <view class='id_dyg2 id_dyg' bindtap='ljcouja'>
+    <image src='../../../images/ic_gift_red.png'></image>
+    <text>抽奖</text>
+  </view>
+  <view class='id_dyg3' bindtap='tzxbd'>
+    <image src='../../../images/ic_me_gray.png'></image>
+    <text>我</text>
+  </view>
+</view>

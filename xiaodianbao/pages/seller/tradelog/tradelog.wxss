@@ -1,0 +1,98 @@
+page{
+  background: #ebebeb;
+}
+.yhj_kp{
+  background: #fff;
+  overflow: hidden;
+}
+.yhj_kp .wsdzl{
+  float: left;
+  width: 17%;
+  text-align: center;
+  line-height: 80rpx;
+  color: #bbb;
+  font-size: 26rpx;
+  margin: 0 4%;
+}
+.yhj_kp .on{
+  color: #e14e43;
+  border-bottom: 4rpx solid #e14e43;
+}
+.yl_wzsh{
+  height: 95rpx;
+  border-bottom: 1rpx solid #dbdbdb;
+  padding:0 40rpx;
+  background: #fff;
+}
+.mrtyl{
+ margin-top: 10rpx;
+ display: none;
+}
+.us_tx{
+  float: left;
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 12rpx;
+  border-radius: 35rpx;
+  overflow: hidden;
+}
+.yh_ss{
+  font-size: 26rpx;
+  color: #666;
+  line-height: 95rpx;
+  float: left;
+  margin-left: 16rpx;
+  width: 220rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ds_jg{
+  float: left;
+  width: 140rpx;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 95rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.tei_rq{
+ float: right; 
+ color: #666;
+ font-size: 20rpx;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 95rpx;
+  text-align: right;
+}
+.yxfdj{
+  float: right; 
+  text-align: right;
+}
+.hdjsj{
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+  margin-top: 19rpx;
+}
+.jxfsj{
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #e14e43;
+   margin-top: 19.rpx;
+}
+.gqjl{
+  color: #666;
+}
+.drdhs{
+  color: #bbb;
+}
+.glxy{
+  display: block;
+}
+ .yh_ss text{
+  font-size: 18rpx;
+  line-height: 18rpx;
+} 

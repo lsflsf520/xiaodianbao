@@ -1,0 +1,57 @@
+<view class='yhj_kp'>
+  <view class="wsdzl {{youhj == 0 ? 'on' : ''}}" data-zdybs='0' bindtap='xzkpxs'>已领取</view>
+  <view class="wsdzl {{youhj == 1 ? 'on' : ''}}" data-zdybs='1' bindtap='xzkpxs'>已消费</view>
+  <view class="wsdzl {{youhj == 2 ? 'on' : ''}}" data-zdybs='2' bindtap='xzkpxs'>已过期</view>
+  <view class="wsdzl {{youhj == 3 ? 'on' : ''}}" data-zdybs='3' bindtap='xzkpxs'>购券记录</view>
+</view>
+<view class="mrtyl {{youhj == 0 ? 'glxy' : ''}}">
+  <view class='yl_wzsh'>
+    <image class='us_tx' src='../../../images/gl_qb_ustx.png'></image>
+    <view class='yh_ss'>天上纸鸢飞</view>
+    <view class='ds_jg'>39元</view>
+    <view class='tei_rq'>2018-03-05  12:56:34</view>
+  </view>
+   <view class='yl_wzsh'>
+    <image class='us_tx' src='../../../images/gl_qb_ustx.png'></image>
+    <view class='yh_ss'>天上纸鸢飞</view>
+    <view class='ds_jg'>9.8折</view>
+    <view class='tei_rq'>2018-03-05  12:56:34</view>
+  </view>
+</view>
+<view class="mrtyl {{youhj == 1 ? 'glxy' : ''}}">
+  <view class='yl_wzsh'>
+    <image class='us_tx' src='../../../images/gl_qb_ustx.png'></image>
+    <view class='yh_ss'>天上纸鸢飞</view>
+    <view class='ds_jg'>39元</view>
+    <view class='yxfdj'>
+        <view class='hdjsj'>2018-03-05  12:56:34</view>
+        <view class='jxfsj'>2018-03-06  12:56:34</view>
+    </view>
+  </view>
+</view>
+<view class="mrtyl {{youhj == 2 ? 'glxy' : ''}}">
+  <view class='yl_wzsh'>
+    <image class='us_tx' src='../../../images/gl_qb_ustx.png'></image>
+    <view class='yh_ss'>天上纸鸢飞</view>
+    <view class='ds_jg drdhs'>39元</view>
+    <view class='tei_rq drdhs'>2018-03-05  12:56:34</view>
+  </view>
+</view>
+<view class="mrtyl {{youhj == 3 ? 'glxy' : ''}}">
+  <view class='yl_wzsh'>
+    <view class='yh_ss'>1000+10<text>张</text></view>
+    <view class='ds_jg'>折扣券</view>
+    <view class='yxfdj'>
+        <view class='hdjsj'>徐记海鲜麓谷店</view>
+        <view class='jxfsj gqjl'>2018-03-06  12:56:34</view>
+    </view>
+  </view>
+  <view class='yl_wzsh'>
+    <view class='yh_ss'>1000+10<text>张</text></view>
+    <view class='ds_jg'>现金券</view>
+    <view class='yxfdj'>
+        <view class='hdjsj'>徐记海鲜车站路店</view>
+        <view class='jxfsj gqjl'>2018-03-06  12:56:34</view>
+    </view>
+  </view>
+</view>

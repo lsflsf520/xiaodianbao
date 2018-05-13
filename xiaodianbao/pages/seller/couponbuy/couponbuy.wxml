@@ -1,0 +1,76 @@
+<view class='dpxz'>
+    
+    <view class='ybddxz'>
+      <view class='pc_ker'>
+      <view class="section sy_lzh">
+      <image class='jt_dw' src='../../../images/gl_xq_03.png'></image>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+    </view>
+    <image class='xd_zst' src='../../../images/ic_shop_c.png'></image>
+</view>
+
+<view class='dx_goum'>
+  <view class="gm_dzs {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="gmdzs">100<text data-current="0">张</text><view class='zeng_dsz' data-current="0">赠10张</view><image class='gx_djt' src='../../../images/goumai_q.png'></image></view>
+  <view class="gm_dzs {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="gmdzs">200<text data-current="1">张</text><view class='zeng_dsz' data-current="1">赠10张</view><image class='gx_djt' src='../../../images/goumai_q.png'></image></view>
+  <view class="gm_dzs {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="gmdzs">500<text data-current="2">张</text><view class='zeng_dsz' data-current="2">赠10张</view><image class='gx_djt' src='../../../images/goumai_q.png'></image></view>
+  <view class="gm_dzs {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="gmdzs">1000<text data-current="3">张</text><view class='zeng_dsz' data-current="3">赠10张</view><image class='gx_djt' src='../../../images/goumai_q.png'></image></view>
+  <view class="gm_dzs {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="gmdzs">2000<text data-current="4">张</text><view class='zeng_dsz' data-current="4">赠10张</view><image class='gx_djt' src='../../../images/goumai_q.png'></image></view>
+  <view class="gm_dzs {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="gmdzs">5000<text data-current="5">张</text><view class='zeng_dsz' data-current="5">赠10张</view><image class='gx_djt' src='../../../images/goumai_q.png'></image></view>
+</view>
+
+<view class='zdin_zs'><input class='zdy_zang' placeholder='自定义张数'/>张 + 赠送 10 张</view>
+<view class='ye_zhif'>
+  <view class='cz_ed'>100<text>元</text></view>
+
+  <view class="xz_fuk {{dckf == 0 ? 'xz_tyhj':'' }}" data-fkfans="0" bindtap="djl_qu">
+      <image class='sfxz' src='../../../images/ic_unsel.png' data-fkfans="0"></image>
+       <image class='sfxz2' src='../../../images/ic_sel_red.png' data-fkfans="0"></image>
+      <image class='hz_zf' src='../../../images/ic_yu.png' data-fkfans="0" ></image>
+      
+      <view class='wb_shiy' data-fkfans="0" >
+        <view class='ye_zhif2' data-fkfans="0" >余额支付</view>
+        <view class='qb_zhey' data-fkfans="0" >请保证余额充足</view>
+      </view>
+      
+  </view>
+   <view class="xz_fuk {{dckf == 1 ? 'xz_tyhj':'' }}" data-fkfans="1" bindtap="djl_qu">
+     <image class='sfxz' src='../../../images/ic_unsel.png' data-fkfans="1"></image>
+       <image class='sfxz2' src='../../../images/ic_sel_red.png' data-fkfans="1"></image>
+      <image class='hz_zf' src='../../../images/ic_weixin.png' data-fkfans="1"></image>
+      
+      <view class='wb_shiy' data-fkfans="1">
+        <view class='ye_zhif2' data-fkfans="1">微信支付</view>
+        <view class='qb_zhey' data-fkfans="1">推荐安装微信5.0及以上版本使用</view>
+      </view>
+      
+  </view>
+  
+</view>
+
+<view class='gq_qued' bindtap='dk_ysc'>确  认</view>
+
+<!-- 弹窗 错误提示-->
+<view class='hs_gzc' hidden='{{gonts}}'></view>
+
+<view class='cu_tanc' hidden='{{cwts_tc}}'>
+  <image class='nc_gnc' src='../../../images/ic_close.png' bindtap='dknzew'></image>
+  <view class='tb_biaot'>错误提示！</view>
+  <image class='mz_kul' src='../../../images/ic_fail.png'></image>
+  <view class='yr_buz'>余额不足  请先充值！</view>
+  <view class='gq_chonz'>去充值</view>
+</view>
+
+<view class='cu_tanc' hidden='{{cwts_tc2}}'>
+  <image class='nc_gnc' src='../../../images/ic_close.png' bindtap='dknzew2'></image>
+  <view class='tb_biaot'>支付成功！</view>
+  <image class='mz_kul' src='../../../images/ic_succ.png'></image>
+  <view class='yr_buz'>支付成功  感谢您的支持！</view>
+  <view class='gq_chonz' style='background:#e14e43;color:#fff;'>选券</view>
+   <view class='gq_chonz qc_kye'>查看余额</view> 
+</view>

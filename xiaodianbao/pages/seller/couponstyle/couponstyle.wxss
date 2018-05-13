@@ -1,0 +1,221 @@
+page{
+  background: #ebebeb;
+}
+.qz_ongt{
+  background: #fff;
+  padding-bottom: 28rpx;
+  margin-bottom: 16rpx;
+}
+.qdys{
+  margin: 0 20rpx ;
+  height: 211rpx;
+  width: 710rpx;
+  position: relative;
+}
+.ds_bj{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+.left_zb{
+  position: absolute;
+  left:0;
+  top: 0;
+  height: 100%;
+  width: 197rpx;
+  text-align: center;
+}
+.dszka{
+  padding-top: 29rpx;
+  font-size: 84rpx;
+  color: #e14e43;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+}
+.dszka text{
+  font-size: 24rpx;
+  color: #e14e43;
+}
+.mdsy{
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin-top: 10rpx;
+  color: #e14e43;
+}
+.dp_kz{
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.ycsdd{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dp_cent{
+  position: absolute;
+  left: 200rpx;
+  top: 0;
+  height: 211rpx;
+  padding-left: 20rpx;
+}
+.dp_cf{
+  font-size: 30rpx;
+  color: #222;
+  line-height: 82rpx;
+  padding-top: 20rpx;
+}
+.dp_cf image{
+  float: left;
+  width: 82rpx;
+  height: 82rpx;
+  margin-right: 15rpx;
+  border-radius: 41rem;
+}
+.sj_rq{
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #222;
+  margin-top: 15rpx;
+
+}
+.xz_tz{
+  font-size: 20rpx;
+  color: #222;
+  line-height: 20rpx;
+  margin-top: 20rpx;
+  position: relative;
+  padding-right: 30rpx;
+  float: left;
+}
+.xz_tz image{
+  width: 22rpx;
+  height: 12rpx;
+  position: absolute;top: 4rpx;
+  right: 0;
+}
+.lj_sy{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 211rpx;
+  width: 138rpx;
+
+}
+.sy_an{
+  width: 120rpx;
+  line-height: 50rpx;
+  border: 2rpx solid #e14e43;
+  text-align: center;
+  font-size: 24rpx;
+  color: #e14e43;
+  border-radius: 10rpx;
+  position:absolute;
+  top: 50%;
+  margin-top: -25rpx;
+  left: 0;
+}
+.zkouq{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 45rpx;
+  height: 60rpx; 
+  font-size: 20rpx;
+  color:#fff;
+}
+.zkouq image{
+    position: absolute;
+  top:0;
+  left: 0;
+  width: 45rpx;
+  height: 60rpx; 
+   z-index: 4;
+}
+.zkouq text{
+    position: absolute;
+  top:0;
+  left: 0;
+  width: 30rpx;
+  height: 30rpx; 
+  line-height: 30rpx;
+  text-align: center;
+  z-index: 5;
+}
+.qdys1 .dszka{
+  color: #fff;
+} 
+.qdys1 .dszka text{
+  color: #fff;
+}
+.qdys1 .mdsy{
+  color: #fff;
+}
+.qdys1 .dp_kz{
+  color: #222;
+}
+.qdys1 .dp_cf{
+  color: #fff;
+}
+.qdys1 .sj_rq{
+  color: #fff;
+}
+.qdys1 .xz_tz{
+  color: #222;
+}
+.qdys1 .sy_an{
+  background: #fff;
+  border-color: #fff;
+  color: #e14e43;
+}
+.qdys1 .zkouq text{
+  color: #808080;
+}
+.sm_zhek{
+  font-size: 24rpx;
+  line-height: 30rpx;
+  padding-left: 36rpx;
+  color: #222;
+  border-bottom: 1px solid #dbdbdb;
+}
+.mrt16{
+  margin-top: 16rpx;
+}
+.hs_cbkxz{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+}
+.cdon .hs_cbkxz{
+  display: block;
+}
+.zkqy1 .dszka,.zkqy1 .dszka text,.zkqy1 .mdsy,.zkqy1 .dp_kz{
+  color: #39270f;
+}
+.zkqy2 .dszka,.zkqy2 .dszka text,.zkqy2 .mdsy,.zkqy2 .dp_kz{
+  color: #e14e43;
+}
+.zkqy3 .dszka,.zkqy3 .dszka text,.zkqy3 .mdsy,.zkqy3 .dp_kz{
+  color: #001b46;
+}
+.xjqys1 .dszka,.xjqys1 .dszka text,.xjqys1 .mdsy,.xjqys1 .dp_kz{
+  color: #ecd699;
+}
+.xjqys2 .dszka,.xjqys2 .dszka text,.xjqys2 .mdsy,.xjqys2 .dp_kz{
+  color: #fff;
+}
+.xjqys3 .dszka,.xjqys3 .dszka text,.xjqys3 .mdsy,.xjqys3 .dp_kz{
+  color: #e3ae69;
+}
+.xjqys1 .sy_an ,.xjqys2 .sy_an,.xjqys3 .sy_an{
+  border-color: #fff;
+  color: #fff;
+}

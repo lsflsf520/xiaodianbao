@@ -1,0 +1,114 @@
+<form bindsubmit='formsubmit'>
+<view class='db_dpt'>
+  <image catchtap="chooseImageTap" src="{{shop.logo}}"></image>
+</view>
+<view class='dp_xx'>
+  <view class='dp_qc'>
+    <view class='zb_ahs'>店铺全称</view>
+    <input class='hs_hb' name="fullName" value='{{shop.fullName}}' placeholder='请输入店铺名称' />
+  </view>
+  <view class='dp_qc'>
+    <view class='zb_ahs'>店铺简称</view>
+    <input class='hs_hb' name="alias" value='{{shop.alias}}' placeholder='不超过6个汉字  英文不超过10个字' />
+  </view>
+  <view class='dp_qc'>
+    <view class='zb_ahs'>所属行业</view>
+    <view class='hs_hb'>
+      <view class='kz_wck'>
+        <view class='xfcp'>
+          <image src='../../../images/dm_xx_ico.png'></image>
+          <picker bindchange="bindRootIndChange" value="{{rootIndex}}" range="{{rootArr}}" range-key='name'>
+            <view class="picker">{{rootArr[rootIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class='kz_wck'>
+        <view class='xfcp'>
+          <image src='../../../images/dm_xx_ico.png'></image>
+          <picker bindchange="bindSubIndChange" value="{{subIndex}}" range="{{subArr}}"  range-key='name'>
+            <view class="picker">{{subArr[subIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='dp_qc'>
+    <view class='zb_ahs'>店长姓名</view>
+    <input class='hs_hb' name='mgrName' value='{{shop.mgrName}}' placeholder='请输入真实姓名' />
+  </view>
+
+  <view class='dp_qc'>
+    <view class='zb_ahs'>店长手机</view>
+    <input class='hs_hb' name='' value='' placeholder='请输入有效手机号' />
+  </view>
+
+  <view class='dp_qc'>
+    <view class='zb_ahs'>客服电话</view>
+    <input class='hs_hb' name='kefu' value='{{shop.kefu}}' placeholder='请输入纯数字' />
+  </view>
+
+  <view class='dp_qc'>
+    <view class='zb_ahs'>营业执照</view>
+    <view class='hs_hb'>
+      <image bindtap="chooseImage" class='yi_yzz' src="{{files}}"></image>
+    </view>
+  </view>
+
+  <view class='dp_qc'>
+    <view class='zb_ahs'>小店地址</view>
+    <view class='hs_hb'>
+      <view class='kz_wck kz_wck2'>
+        <view class='xfcp'>
+          <image src='../../../images/dm_xx_ico.png'></image>
+          <picker bindchange="provinceChange" value="{{provIndex}}" range="{{provArr}}"  range-key='name'>
+            <view class="picker">{{provArr[provIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class='kz_wck kz_wck2 kz_wck3' style="display:{{cityArr.length > 0 ? 'block' : 'none'}}">
+        <view class='xfcp'>
+          <image src='../../../images/dm_xx_ico.png'></image>
+          <picker bindchange="cityChange" value="{{cityIndex}}" range="{{cityArr}}" range-key='name'>
+            <view class="picker">{{cityArr[cityIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class='kz_wck kz_wck2 kz_wck3' style="display:{{countyArr.length > 0 ? 'block' : 'none'}}">
+        <view class='xfcp'>
+          <image src='../../../images/dm_xx_ico.png'></image>
+          <picker bindchange="countyChange" value="{{countyIndex}}" range="{{countyArr}}" range-key='name'>
+            <view class="picker">{{countyArr[countyIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='dp_qc'>
+    <view class='zb_ahs'>具体地址</view>
+    <input class='hs_hb' name='detailAddr' value='{{shop.detailAddr}}' placeholder='请输入街道 门牌号' />
+  </view>
+</view>
+<view class='ts_sdw'>
+  <view class='jz_dw'>拖动进行精准定位</view>
+  <map id="map4select"
+    longitude="{{longitude}}" latitude="{{latitude}}" 
+    markers="{{markers}}"
+    scale="20" 
+    style="width:{{mapWidth}}px;height:{{mapHeight}}px"
+    bindregionchange="regionchange"
+    controls="{{controls}}">
+</map>
+</view>
+<block wx:if='{{posterUname}}'>
+  <view class='tx_tjr'>推荐人 {{posterUname}}</view>
+</block>
+<view class='hs_bjt'>
+  <view class='ty_xy' bindtap='xysfty'>
+    <image class='xy_tp' src='{{tysrc}}'></image>同意《小店宝商户服务协议》</view>
+  <button class='hs_xgl' formType="submit">提交审核</button>
+</view>
+</form>

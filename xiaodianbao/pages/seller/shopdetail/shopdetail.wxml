@@ -1,0 +1,68 @@
+<!-- 通过修改图片路径来控制   已审核和待审核 -->
+<image class='ys_shwc' src='../../../images/ic_daishenhe_all.png'></image>
+<view class='db_dpt'>
+  <image  src='{{shop.logo}}'></image>
+</view>
+<view class='dp_xx'>
+  <view class='dp_qc'>
+    <view class='zb_ahs'>店铺全称</view>
+    <view class='hs_hb'>{{shop.fullName}}</view>
+  </view>
+  <view class='dp_qc'>
+    <view class='zb_ahs'>店铺简称</view>
+    <view class='hs_hb'>{{shop.alias}}</view>
+  </view>
+    <view class='dp_qc'>
+    <view class='zb_ahs'>所属行业</view>
+    <view class='hs_hb'>
+        <view class='kz_wck'>
+            <view class='xfcp'>消费品<image src='../../../images/dm_xx_ico.png'></image></view>
+        </view>
+        <view class='kz_wck'>
+            <view class='xfcp'>食品/饮料/烟酒/日用品<image src='../../../images/dm_xx_ico.png'></image></view>
+        </view>
+    </view>
+  </view>
+
+   <view class='dp_qc'>
+    <view class='zb_ahs'>店长姓名</view>
+    <view class='hs_hb'>刘先生</view>
+  </view>
+
+  <view class='dp_qc'>
+    <view class='zb_ahs'>店长手机</view>
+    <view class='hs_hb'>{{currUser.phone}}</view>
+  </view>
+
+    <view class='dp_qc'>
+    <view class='zb_ahs'>客服电话</view>
+    <view class='hs_hb'>{{shop.kefu}}</view>
+  </view>
+  
+   <view class='dp_qc'>
+    <view class='zb_ahs'>营业执照</view>
+    <view class='hs_hb'><image class='yi_yzz' src='../../../images/gl_qb_store_03.png'></image></view>
+      </view>
+
+      <view class='dp_qc'>
+    <view class='zb_ahs'>店铺地区</view>
+    <view class='hs_hb'>湖南省  长沙市  岳麓区</view>
+  </view>
+
+   <view class='dp_qc'>
+    <view class='zb_ahs'>具体地址</view>
+    <view class='hs_hb'>{{shop.detailAddr}}</view>
+  </view>
+</view>
+<view class='ts_sdw'>
+  <view class='jz_dw'>拖动进行精准定位</view>
+  <image class='dt_dwzs' src='../../../images/dl_dyhs.png'></image>
+</view>
+<view class='tx_tjr'>推荐人  刘先生</view>
+<view class='sm_rwm'>
+  <view class='sm_wz'>可将此二维码打印后置于方便客户扫码的位置</view>
+  <image class='sc_rwm' src='../../../images/dl_dyhs.png'></image>
+</view>
+<view class='hs_bjt'>
+  <view class='hs_xgl' bindtap='ljxqxg'>修  改</view>
+</view>

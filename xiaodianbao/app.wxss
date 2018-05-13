@@ -1,0 +1,83 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+/* 底部菜单开始 */
+.gd_gaod{
+  height:90rpx;
+}
+.db_caid{
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  height: 90rpx;
+  border-top: 1px solid #dbdbdb;
+  width: 100%;
+  background: #fff;
+}
+.db_caid view{
+  text-align: center;
+  width: 33.3%;
+}
+.id_dyg1 image{
+  width: 55rpx;
+  height: 46rpx;
+  display: block;
+  margin: 14rpx auto 0;
+}
+.db_caid text{
+font-size:20rpx;
+color:#808080;
+display:block;
+text-align:center;
+}
+.id_dyg2 image{
+  width: 53rpx;
+  height: 55rpx;
+  display: block;
+  margin: 14rpx auto 0;
+}
+.id_dyg3 image{
+  width: 51rpx;
+  height: 51rpx;
+  display: block;
+  margin: 14rpx auto 0;
+}
+.id_dyg text{
+  color: #e14e43;
+  
+}
+
+
+/*"tabBar": {
+                "color": "#666",
+                "selectedColor": "#e14e43",
+    "list": [
+      {
+        "pagePath": "pages/seller/voucher1/voucher1",
+        "text": "选券",
+        "iconPath": "images/ic_coupon_gray.png",
+        "selectedIconPath":"images/ic_coupon.png"
+      },
+      {
+        "pagePath": "pages/seller/index/index",
+        "text": "首页",
+        "iconPath": "images/ic_home_gray.png",
+        "selectedIconPath": "images/ic_home.png"
+      
+      },
+      {
+        "pagePath": "pages/seller/wallet/wallet",
+        "text": "钱包",
+        "iconPath": "images/ic_wallet_gray.png",
+        "selectedIconPath": "images/ic_wallet.png"
+      }
+    ]
+  },*/

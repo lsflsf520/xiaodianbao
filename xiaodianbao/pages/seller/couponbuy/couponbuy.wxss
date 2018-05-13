@@ -1,0 +1,263 @@
+page{
+  background: #ebebeb;
+}
+.dpxz{
+height: 70rpx;
+background: #fff;
+padding: 0 36rpx;
+}
+.ybddxz{
+  float: right;
+  width: 270rpx;
+  height: 40rpx;
+  margin-top: 15rpx;
+}
+.xd_zst{
+  float: right;
+  margin-right: 14rpx;
+  width: 58rpx;
+  height: 58rpx;
+  margin-top: 6rpx;
+  border-radius: 29rpx;
+  border: 1px solid #dedede;
+}
+
+.pc_ker .sy_lzh {
+  display: inline-block;
+  height: 42rpx;
+  width: 270rpx;
+  border-radius: 5rpx;
+  background: #ededed;
+  font-size: 24rpx;
+  color: #222;
+  box-sizing: border-box;
+  padding-left: 14rpx;
+  position: relative;
+  overflow: hidden;
+}
+.jt_dw {
+  position: absolute;
+  top: 0;
+  width: 35rpx;
+  right: 0;
+  height: 42rpx;
+}
+
+.dx_goum{
+  padding:21rpx 21rpx 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.gm_dzs{
+  width: 220rpx;
+  height: 160rpx;
+  background: #fff;
+  position: relative;
+  line-height: 160rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #222;
+  border-radius: 10rpx;
+  margin-bottom: 21rpx;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}
+.gm_dzs text{
+  font-size: 20rpx;
+  color: #222;
+}
+.on .gx_djt{
+  display: block;
+}
+.zeng_dsz{
+  position: absolute;
+  top: 17rpx;
+  right: 0;
+  padding: 10rpx;
+  line-height: 30rpx;
+  border-top-left-radius:15rpx;
+   border-bottom-left-radius:15rpx;
+   background: #fff45c;
+   font-size: 20rpx;
+   color: #222;
+}
+.gx_djt{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220rpx;
+  height: 160rpx;
+  display: none;
+}
+
+.zdin_zs{
+  height: 95rpx;
+  background: #fff;
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 100rpx 0 26rpx;
+  text-align: right;
+  line-height: 95rpx;
+}
+.zdy_zang{
+  width:164rpx;
+  height: 65rpx;
+  font-size: 24rpx;
+  color: #666;
+  display: inline-block;
+  vertical-align: middle;
+  background: #ebebeb;
+  text-align: center;
+  margin-right: 13rpx;
+  position: relative;
+  top: -2rpx;
+}
+
+.cz_ed{
+line-height: 84rpx;
+width: 316rpx;
+margin: 0 auto;
+border-bottom: 1px solid #dbdbdb;
+font-size: 60rpx;
+  color: #e14e43;
+  text-align: center;
+}
+.cz_ed text{
+  font-size: 24rpx;
+  color: #e14e43;
+}
+.ye_zhif{
+  background: #fff;
+  margin-top: 40rpx;
+}
+
+
+.sfxz{
+  float: right;
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 34rpx;
+  margin-top: 30rpx;
+}
+.sfxz2{
+  float: right;
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 34rpx;
+  margin-top: 30rpx;
+  display: none;
+}
+.xz_tyhj .sfxz2{
+  display: block;
+}
+.xz_tyhj .sfxz{
+  display: none;
+}
+.xz_fuk{
+  margin: 0 36rpx;
+  height: 94rpx;
+}
+.xz_fuk:last-child{
+  border-top: 1rpx solid #dbdbdb;
+}
+.hz_zf{
+  float: left;
+  width: 38rpx;
+  height: 38rpx;
+  margin-top: 28rpx;
+}
+.wb_shiy{
+  float: left;
+  margin-left: 22rpx;
+}
+.ye_zhif2{
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #222;
+  padding-top: 22rpx;
+}
+.qb_zhey{
+  font-size: 20rpx;
+  color: #bbb;
+  line-height: 20rpx;
+  margin-top: 12rpx;
+}
+.gq_qued{
+  width: 600rpx;
+  line-height: 74rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: #e14e43;
+  margin: 139rpx auto 0;
+ border-radius: 10rpx;
+}
+.hs_gzc{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #b3adad;
+  opacity:.6;
+  z-index: 5;
+}
+
+.cu_tanc{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -411rpx;
+  margin-left: -310rpx;
+  width: 620rpx;
+  height: 822rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  padding:0 60rpx;
+  z-index: 10;
+}
+.nc_gnc{
+  position: absolute;
+  top: -67rpx;
+  right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.tb_biaot{
+  line-height: 90rpx;
+  font-size: 36rpx;
+  color: #e60012;
+  text-align: center;
+  border-bottom: 1rpx dashed #dbdbdb;
+}
+.mz_kul{
+  display: block;
+  width: 175rpx;
+  height: 235rpx;
+  margin: 100rpx auto;
+}
+.yr_buz{
+  margin: 30rpx auto;
+  font-size: 24rpx;
+  color: #a0a0a0;
+  text-align: center;
+  line-height: 25rpx;
+}
+.gq_chonz{
+  float: right;
+  margin-top: 100rpx;
+  width: 160rpx;
+  line-height: 60rpx;
+  border: 2rpx solid #e14e43;
+  font-size: 24rpx;
+  color: #e14e43;
+  text-align: center;
+  border-radius: 15rpx;
+  margin-right: 14rpx;
+}
+.qc_kye{
+  float: left;
+  margin-left: 14rpx;
+}

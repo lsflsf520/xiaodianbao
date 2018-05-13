@@ -1,0 +1,164 @@
+<view class='xq_top'>
+  <view class='pc_ker'>
+    <view class="section sy_lzh">
+      <image class='jt_dw' src='../../../images/gl_xq_03.png'></image>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class='zkhxj'>
+  <view class='xtdq'>
+    <view class="gt_ys {{currentTab==0 ? 'dq_zsq' : ''}}" data-current="0" bindtap="zhekx">抵用券</view>
+  </view>
+  <view class='xtdq'>
+    <view class="gt_ys {{currentTab==1 ? 'dq_zsq' : ''}}" data-current="1" bindtap="zhekx">现金券</view>
+  </view>
+</view>
+
+
+<view class="zekqunl {{currentTab==0 ? 'xiansyc' : ''}}">
+  <view class="container">
+    <view class=" {{item.isTouchMove ? 'item-active' : 'item'}}" style='{{diyongList[index].zdx}}' bindtouchstart='touchstart' bindtouchmove='touchmove' wx:for="{{diyongList}}" wx:key='' data-index="{{index}}">
+     <view class='txt'>
+
+        <view class='qdys zkqy3  {{item.zl_ys}}'>
+          <image class='ds_bj' src='../../../images/{{item.tmplFileName}}.png'></image>
+          <view class='zkouq'>
+            <text>抵</text>
+            <image src='../../../images/dz_zkqz.png'></image>
+          </view>
+          <view class='left_zb'>
+            <view class='dszka'>
+              <text></text>{{item.discount}}
+              <text>元</text>
+            </view>
+            <view class='mdsy ycsdd'>满{{item.minAmount}}元使用</view>
+            <view class='dp_kz ycsdd'>*店面赠送*</view>
+          </view>
+          <view class='dp_cent'>
+            <view class='dp_cf'>
+              <image src='../../../images/dp_wt.png'></image>徐记海鲜店麓谷店</view>
+            <view class='sj_rq'>2018/03/05-2018/04/05</view>
+            <view class='xz_tz' bindtap='ktzdf' data-index="{{index}}">{{item.remark}}
+              <image src='../../../images/ic_more_down.png'></image>
+
+              <view class='ba_dtc' wx:if="{{index == bcle}}">
+                <view class='ycxdd'>1:仅限炒菜类品 不含酒水 节假日通</view>
+                <view class='ycxdd'>2:请将优惠券出示给店家使用....... </view>
+                
+              </view>
+
+            </view>
+          </view>
+          <view class='lj_sy'>
+            <view class='sy_an'>立即使用</view>
+          </view>
+        </view>
+
+      </view>
+      <view class='del_cs'>
+        <view class='del del1' data-index="{{index}}">复制</view>
+        <view class='del del2' data-index="{{index}}">停用</view>
+        <view class='del del3' data-index="{{index}}">删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view style='height:10rpx'></view>
+<!-- 底部菜单 -->
+<view class='gd_gaod'></view>
+<view class='db_caid'>
+  <view class='id_dyg1 id_dyg' bindtap='toXq'>
+    <image src='../../../images/ic_coupon.png'></image>
+    <text>选券</text>
+  </view>
+  <view class='id_dyg2 ' bindtap='toIndex'>
+    <image src='../../../images/ic_home_gray.png'></image>
+    <text>首页</text>
+  </view>
+  <view class='id_dyg3' bindtap='toWallet'>
+    <image src='../../../images/ic_wallet_gray.png'></image>
+    <text>钱包</text>
+  </view>
+</view>
+
+
+
+<view class="zekqunl {{currentTab==1 ? 'xiansyc' : ''}}">
+
+  <view class="container">
+    <view class=" {{item.isTouchMove ? 'item-active' : 'item'}}" style='{{cashList[index].zdx}}' bindtouchstart='touchstart' bindtouchmove='touchmove2' wx:for="{{cashList}}" wx:key='' data-index="{{index}}">
+      <view class='txt'>
+
+        <view class='qdys {{item.zl_ys}}'>
+          <image class='ds_bj' src='{{item.img_bg}}'></image>
+          <view class='zkouq'>
+            <text>{{item.zhe_sjb}}</text>
+            <image src='{{item.img_zhe}}'></image>
+          </view>
+          <view class='left_zb'>
+            <view class='dszka'>
+              <text>{{item.dsyq}}</text>{{item.left_price}}
+              <text>{{item.left_zhe}}              </text>
+            </view>
+            <view class='mdsy ycsdd'>{{item.left_man}}</view>
+            <view class='dp_kz ycsdd'>{{item.left_zeng}}</view>
+          </view>
+          <view class='dp_cent'>
+            <view class='dp_cf'>
+              <image src='{{item.img_dian}}'></image>{{item.right_dian}}</view>
+            <view class='sj_rq'>{{item.right_data}}</view>
+            <view class='xz_tz' bindtap='ktzdf2' data-index="{{index}}">{{item.right_text}}
+              <image src='{{item.img_xl}}'></image>
+
+              <view class='ba_dtc' wx:if="{{index == bcle2}}">
+                <view class='ycxdd'>{{item.tc_text01}}</view>
+                <view class='ycxdd'>{{item.tc_text02}} </view>
+                <view class='ycxdd'>{{item.tc_text03}} </view>
+              </view>
+
+            </view>
+          </view>
+          <view class='lj_sy'>
+            <view class='sy_an'>立即使用</view>
+          </view>
+        </view>
+
+      </view>
+
+      <view class='del_cs'>
+        <view class='del del1' data-index="{{index}}">复制</view>
+        <view class='del del2' data-index="{{index}}">停用</view>
+        <view class='del del3' data-index="{{index}}">删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 右下角浮动按钮  -->
+<view class='sy_quand' style='position: fixed;' wx:if="{{(currentTab == 0 && diyongList && diyongList.length > 0) || (currentTab == 1 && cashList && cashList.length > 0)}}">
+  <image class='tj_xinq' bindtap='editCoupon' src='../../../images/ic_add1.png'></image>
+  <view class='sd_yuq' bindtap='gmyqian'>
+    <image src='../../../images/ic_buy1.png'></image>
+    <view>余800张</view>
+  </view>
+</view>
+
+<!-- 没有优惠券 样式 开始-->
+<view class='nh_my' wx:if="{{(currentTab == 0 && (!diyongList || diyongList.length == 0)) || (currentTab == 1 && (!cashList || cashList.length == 0))}}">
+  <image class='hs_bj' src='../../../images/my_youh.png'></image>
+  <view class='myqy'>您还没有优惠券呦！</view>
+  <view class='sy_quand'>
+    <image class='tj_xinq' bindtap='editCoupon' src='../../../images/ic_add1.png'></image>
+    <view class='sd_yuq' bindtap='tocouponbuy'>
+      <image src='../../../images/ic_buy1.png'></image>
+      <view>余800张</view>
+    </view>
+  </view>
+</view>
+<!-- 没有优惠券 样式 结束-->

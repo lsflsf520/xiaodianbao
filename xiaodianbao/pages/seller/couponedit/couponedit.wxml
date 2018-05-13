@@ -1,0 +1,173 @@
+<form bindsubmit='formsubmit'>
+<view class="qdys mrt16">
+    <image class='ds_bj' src="../../../images/{{tmplStyle}}.png"></image>
+    <view class='left_zb'>
+      <view class='dszka'>
+        <text></text>9.8<text>折</text>
+      </view>
+      <view class='mdsy ycsdd'>满{{couponData.minAmount}}元使用</view>
+      <view class='dp_kz ycsdd'>*店面赠送*</view>
+    </view>
+    <view class='dp_cent'>
+      <view class='dp_cf'>
+        <image src='../../../images/dp_wt.png'></image>徐记海鲜店麓谷店</view>
+      <view class='sj_rq'>2018/03/05-2018/04/05</view>
+      <view class='xz_tz'>{{couponData.remark}}
+        <image src='../../../images/ic_more_down.png'></image>
+      </view>
+    </view>
+    <view class='lj_sy'>
+      <view class='sy_an' bindtap='selectStyle'>选择样式</view>
+    </view>
+</view>
+
+<view class='zhek_ld'>
+  <view class='xl_dianp'>
+    <view class='dianp'>店铺</view>
+    <view class='ys_xd'></view>
+  </view>
+  <view class='sh_dck'>
+    <view class='zk_mane'>面额/折扣
+      <input name="discount" value='{{couponData.discount}}'></input>元/折</view>
+    <view class='md_shaos'>满
+      <input name="minAmount" value='{{couponData.minAmount}}'></input>元使用</view>
+  </view>
+</view>
+
+<view class='zhek_ld'>
+  <view class='sh_dck'>
+    <view class='zk_mane'>每人领取
+      <input style='width:100rpx;' name='dayLimitNum' value='{{couponData.dayLimitNum}}'></input>张/天</view>
+    <view class='md_shaos'>最多持有
+      <input style='width:100rpx;' name='personLimitNum' value='{{couponData.personLimitNum}}'></input>张有效券</view>
+  </view>
+  <view class='sh_dck'>
+    <view class='zk_mane' bindtap='changeRecvAfterUsed'>券使用后才可再领取
+      <image src='../../../images/{{couponData.recvAfterUsed && couponData.recvAfterUsed == "Y" ? "ic_sel_green.png" : "ic_unsel.png"}}' ></image>
+    </view>
+  </view>
+  <view class='sh_dck'>
+    <view class='zk_mane'>每天最多发放
+      <input name='dayLimitNum' value='{{couponData.dayLimitNum}}'></input>张</view>
+    <view class='md_shaos'>有效期
+      <input style='width:100rpx;' name='effectDay' value='{{couponData.effectDay}}'></input>天</view>
+  </view>
+
+  <view class='sh_dck'>
+    <view class='zk_mane' bindtap='changeOnlinePay'>支持在线支付
+      <image src='../../../images/{{couponData.onlinePay && couponData.onlinePay == "Y" ? "ic_sel_green.png" : "ic_unsel.png"}}' ></image>
+    </view>
+  </view>
+
+  <view class='sh_dck'>
+    <view class='zk_mane'>领取后第
+      <input style='100rpx ' value='{{couponData.effectAfterRecvDay}}'></input>日可使用
+    </view>
+    <view class='sh_dck' style="padding:0;border:0;">
+      <view class='zk_mane' bindtap='changeUseInHoliday'>节假日可使用
+        <image src='../../../images/{{couponData.useInHoliday && couponData.useInHoliday == "Y" ? "ic_sel_green.png" : "ic_unsel.png"}}'></image>
+      </view>
+    </view>
+
+  </view>
+
+  
+
+</view>
+
+<view class='sy_riq'>
+    <view class='ky_driq'>可使用日期
+      <view class="section rq_chaj">
+        <!-- <view class="section__title">日期选择器</view> -->
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="picker">{{date}}</view>
+        </picker>
+      </view> -
+
+      <view class="section rq_chaj">
+        <!-- <view class="section__title">日期选择器</view>  -->
+        <picker mode="date" value="{{date2}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange2">
+          <view class="picker">{{date2}}</view>
+        </picker>
+      </view>
+    </view>
+    <!-- 可使用时段 开始 -->
+    <view class='ky_driq'>
+      可使用时段
+
+      <view class="section sj_chaj">
+        <!-- <view class="section__title">时间选择器</view> -->
+        <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+          <view class="picker">
+             {{time}}
+          </view>
+        </picker>
+      </view>
+      -
+      <view class="section sj_chaj">
+        <!-- <view class="section__title">时间选择器</view> -->
+        <picker mode="time" value="{{time2}}" start="09:01" end="21:01" bindchange="bindTimeChange2">
+          <view class="picker">
+             {{time2}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 可使用时段 结束 -->
+    <view class='tj_rq'><image src='../../../images/ic_add_s.png'></image>点击添加一个日期和时段</view>
+  </view>
+
+  
+<!-- 领取日期 -->
+<view class='sy_riq'>
+    <view class='ky_driq'>可使用日期
+      <view class="section rq_chaj">
+        <!-- <view class="section__title">日期选择器</view> -->
+        <picker mode="date" value="{{date3}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange3">
+          <view class="picker">{{date3}}</view>
+        </picker>
+      </view> -
+
+      <view class="section rq_chaj">
+        <!-- <view class="section__title">日期选择器</view>  -->
+        <picker mode="date" value="{{date4}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange4">
+          <view class="picker">{{date4}}</view>
+        </picker>
+      </view>
+    </view>
+    <!-- 可使用时段 开始 -->
+    <view class='ky_driq'>
+      可使用时段
+
+      <view class="section sj_chaj">
+        <!-- <view class="section__title">时间选择器</view> -->
+        <picker mode="time" value="{{time3}}" start="09:01" end="21:01" bindchange="bindTimeChange3">
+          <view class="picker">
+             {{time3}}
+          </view>
+        </picker>
+      </view>
+      -
+      <view class="section sj_chaj">
+        <!-- <view class="section__title">时间选择器</view> -->
+        <picker mode="time" value="{{time4}}" start="09:01" end="21:01" bindchange="bindTimeChange4">
+          <view class="picker">
+             {{time4}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 可使用时段 结束 -->
+    <view class='tj_rq'><image src='../../../images/ic_add_s.png'></image>点击添加一个日期和时段</view>
+  </view>
+
+  <view class='sh_yousm'>
+    <view class='sm_baoh'>
+      <view class='bh_left'>使用说明</view>
+      <view class='bh_right'><textarea name='remark' placeholder='请输入本券相关的特殊说明' value='{{couponData.remark}}'></textarea></view>
+    </view>
+    <view class='zz_jies'>本券最终解释权归xxx所有，如有疑问请致电400-800-900</view>
+  </view> 
+  
+  <button class='qr_tianj' formType="submit">确认添加</button>
+  </form>
