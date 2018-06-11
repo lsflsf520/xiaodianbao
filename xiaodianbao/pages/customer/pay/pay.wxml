@@ -1,7 +1,8 @@
-<view class="dp_minc">徐记海鲜店麓谷店</view>
+<form bindsubmit='formsubmit'>
+<view class="dp_minc">{{shopName}}</view>
 <view class='je_bsbg'>
-    <view class='zf_jine'><input value='220.00'></input><text>元</text></view>
-     <view class='zf_jine'><input placeholder='输入可使用金额'></input><text>元</text></view>
+    <view class='zf_jine'><input name='ordFee' placeholder='输入本次消费金额'></input><text>元</text></view>
+     <view class='zf_jine'><input name='canUseFee' placeholder='输入可使用金额'></input><text>元</text></view>
      <view class='zx_shouy'>请咨询收银员可使用此券的金额</view>
 </view>
 <view class='fw_baoc'>服务器发生错误，请稍后重试！</view>
@@ -9,15 +10,16 @@
     <view class='ag_hons'>108.00<text>元</text></view>
 
 </view> -->
+
+<!--
 <view class='ye_zhif'>
-  <!-- <view class='cz_ed'>100<text>元</text></view> -->
  <view class='ag_hons'>108.00<text>元</text></view>
 
    <view class="xz_fuk {{dckf == 0 ? 'xz_tyhj':'' }}" data-fkfans="0" bindtap="djl_qu">
        <image class='sfxz' src='../../../images/ic_unsel.png' data-fkfans="0"></image>
        <image class='sfxz2' src='../../../images/ic_sel_red.png' data-fkfans="0"></image>
       <image class='hz_zf' src='../../../images/ic_weixin.png' data-fkfans="0"></image>
-      <!-- ic_sel_red -->
+   
       <view class='wb_shiy ' data-fkfans="0">
         <view class='ye_zhif2' data-fkfans="0">在线支付</view>
         <view class='qb_zhey' data-fkfans="0">推荐安装微信5.0及以上版本使用</view>
@@ -36,5 +38,7 @@
       
   </view>
 </view>
-<view class='fw_xiey' bindtap='tyxiey'><image src='{{tx_src}}'></image>同意《小店宝商户服务协议》</view>
-<view class='qd_yaoz'>确认支付 ¥108.00</view>
+-->
+<view class='fw_xiey' bindtap='agree'><image src='{{tx_src}}'></image>同意《小店宝商户服务协议》</view>
+<button class='qd_yaoz' formType="submit">确认使用 ¥108.00</button>
+</form>

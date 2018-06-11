@@ -8,7 +8,7 @@
     <!-- <view class='xd_kap'> -->
 
    <block wx:for="{{coupons}}" wx:key="item">
-    <view class="lw_zhenb lw_zhenb{{index + 1}} {{turn ? 'nb_chad' : ''}}  {{anmSwitch ? 'nb_chad2' : ''}} {{wyblz==1 ? 'cdgc' : ''}} {{hideCoupon ? 'ygxgg' : ''}}" bindtap='recvCoupon' data-couponid="{{item.id}}" >
+    <view class="lw_zhenb lw_zhenb{{index + 1}} {{turn ? 'nb_chad' : ''}}  {{anmSwitch ? 'nb_chad2' : ''}} {{selCouponIndex==index ? 'cdgc' : ''}} {{hideCoupon ? 'ygxgg' : ''}}" bindtap='recvCoupon' data-coupon-index="{{index}}" data-couponid="{{item.id}}" >
       <image class='lw_beij' src='../../../images/ic_card_back.png'></image>
       <image class='lw_beij2' src='../../../images/ic_card_front.png'></image>
       <view class='lh_text'>

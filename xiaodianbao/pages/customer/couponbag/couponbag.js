@@ -1,25 +1,49 @@
+var NetUtil = require('../../../utils/netutil.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentTab: 0,
+    currentTab: 'RECVD',
     ycbial: true,
-    dcklw: false,
+    hasUsed: false,
+    RECVDCoupons: null
   },
 
   /*选项卡*/
   swichNav: function (e) {
-
     var that = this;
-
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
-      that.setData({
-        currentTab: e.target.dataset.current
-      })
+      var that = this;
+      var state = e.target.dataset.current;
+      if (!this.data[state + "Coupons"]){
+        NetUtil.loadRemoteData('/uc/coupon/load.do?state=' + state, null, function (result) {
+          if ("USED" == state){
+            that.setData({
+              USEDCoupons: result.model,
+              currentTab: state
+            });
+          } else if ("RECVD" == state) {
+            that.setData({
+              RECVDCoupons: result.model,
+              currentTab: state
+            });
+          } else {
+            that.setData({
+              EXPIREDCoupons: result.model,
+              currentTab: state
+            });
+          }    
+        });
+      } else {
+        that.setData({
+          currentTab: state
+        })
+      }     
     }
   },
   ycxians: function () {
@@ -27,9 +51,11 @@ Page({
       ycbial: !this.data.ycbial
     })
   },
-  lj_shiy: function () {
+  useCoupon: function (e) {
+    var couponId = e.currentTarget.dataset.couponId;
+    var shopName = e.currentTarget.dataset.shopName;
     wx.navigateTo({
-      url: '../employ/employ',
+      url: '../pay/pay?couponId=' + couponId + '&shopName=' + shopName,
     })
   },
   tzxbd: function () {
@@ -50,7 +76,15 @@ Page({
   djbtnm: function () {
     var th = this;
     th.setData({
-      dcklw: true,
+      hasUsed: true,
     })
+  },
+  onLoad: function (options) {
+    var that = this;
+    NetUtil.loadRemoteData('/uc/coupon/load.do?state=RECVD', null, function (result) {
+      that.setData({
+        RECVDCoupons: result.model
+      });
+    });
   }
 })

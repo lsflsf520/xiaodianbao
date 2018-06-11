@@ -285,7 +285,7 @@ page{
 
 .sy_quand{
   right: 118rpx;
-  bottom: 37rpx;
+  bottom: 107rpx;
   width: 133rpx;
   padding-top: 1rpx;
   display: block;

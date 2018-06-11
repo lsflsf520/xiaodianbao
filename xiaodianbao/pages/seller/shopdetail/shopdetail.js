@@ -10,7 +10,7 @@ Page({
   },
   ljxqxg: function () {
     wx.navigateTo({
-      url: '../setup/setup?modify=true&shopId=' + this.data.shop.id,
+      url: '../shopedit/shopedit?modify=true&shopId=' + this.data.shop.id,
     })
   },
   /**

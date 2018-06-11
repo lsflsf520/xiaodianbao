@@ -1,36 +1,37 @@
 <view class='xf_xuank'>
-  <view class="{{currentTab==0 ? 'dq_zhens' : ''}}" data-current="0" bindtap="swichNav">已领取</view>
-  <view class="{{currentTab==1 ? 'dq_zhens' : ''}}" data-current="1" bindtap="swichNav">已消费</view>
-  <view class="{{currentTab==2 ? 'dq_zhens' : ''}}" data-current="2" bindtap="swichNav">已过期</view>
+  <view class="{{currentTab=='RECVD' ? 'dq_zhens' : ''}}" data-current="RECVD" bindtap="swichNav">已领取</view>
+  <view class="{{currentTab=='USED' ? 'dq_zhens' : ''}}" data-current="USED" bindtap="swichNav">已消费</view>
+  <view class="{{currentTab=='EXPIRED' ? 'dq_zhens' : ''}}" data-current="EXPIRED" bindtap="swichNav">已过期</view>
 </view>
-<view class="dp_youhq {{currentTab==0 ? 'blckz' : ''}}">
+<view class="dp_youhq {{currentTab=='RECVD' ? 'blckz' : ''}}">
+ <block wx:for="{{RECVDCoupons}}" wx:key="{{item.id}}">
   <view class='hq_bujc'>
     <view class='jxcc_dianp'>
-      <view>徐记海鲜店麓谷店</view>
+      <view>{{item.shop.alias}}</view>
       <image src='../../../images/gk_lxdh.png'></image>
     </view>
     <view class='jc_dizhi'>
       <image src='../../../images/gk_lxdz.png'></image>
-      <view>岳麓区麓谷大道83号</view>
+      <view>{{item.shop.addr}}</view>
     </view>
   </view>
   <!-- 券样式 -->
-  <view class='jy_biank'>
+  <view class='jy_biank' wx:for="{{item.coupons}}" wx:key="{{coupon.id}}" wx:for-item="coupon">
     <view class='qdys mrt16'>
-      <image class='ds_bj' src="../../../images/xld_ysq.png"></image>
+      <image class='ds_bj' src="../../../images/{{coupon.tmplFileName}}.png"></image>
       <view class='left_zb'>
         <view class='dszka'>
-          <text></text>9.8
-          <text>折</text>
+          <text></text>{{coupon.discount}}
+          <text>{{coupon.discountType == "Amount" ? "元" : "折"}}</text>
         </view>
-        <view class='mdsy ycsdd'>满100元使用</view>
+        <view class='mdsy ycsdd'>满{{coupon.minAmount}}元使用</view>
         <view class='dp_kz ycsdd'>*店面赠送*</view>
       </view>
       <view class='dp_cent'>
         <view class='dp_cf'>
-          <image src='../../../images/dp_wt.png'></image>徐记海鲜店麓谷店</view>
+          <image src='../../../images/dp_wt.png'></image>店铺{{coupon.shopId}}</view>
         <view class='sj_rq'>2018/03/05-2018/04/05</view>
-        <view class='xz_tz' bindtap="ycxians">仅限炒菜品类\t不含酒水\t节假日
+        <view class='xz_tz' bindtap="ycxians">{{coupon.remark}}
           <image src='../../../images/ic_more_down.png'></image>
               <view class='ba_dtc' hidden='{{ycbial}}'>
                 <view class='ycxdd'>仅限炒菜类品 不含酒水 节假日通用 </view>
@@ -40,11 +41,12 @@
         </view>
       </view>
       <view class='lj_sy'>
-        <view class='sy_an' bindtap='lj_shiy'>立即使用</view>
+        <view class='sy_an' data-coupon-id='{{coupon.id}}' data-shop-name='{{item.shop.alias}}' bindtap='useCoupon'>立即使用</view>
       </view>
     </view>
     <view style='height:16rpx;'></view>
   </view>
+ </block>
   <!-- 定位按钮 -->
   <view class='dw_btns' bindtap='fjdian'>
     <image src='../../../images/btn_nearstor.png'></image>
@@ -58,7 +60,8 @@
   </view>
 </view>
 <!-- 第二个卡片 -->
-<view class="dp_youhq {{currentTab==2 ? 'blckz' : ''}}">
+<view class="dp_youhq {{currentTab=='USED' ? 'blckz' : ''}}">
+ <block wx:for="{{USEDCoupons}}" wx:key="{{item.id}}">
   <view class='hq_bujc'>
     <view class='jxcc_dianp'>
       <view>徐记海鲜店麓谷店</view>
@@ -70,60 +73,20 @@
     </view>
   </view>
   <!-- 券样式 -->
-  <view class='jy_biank'>
-    <view class='qdys mrt16 qdys1'>
-      <image class='ds_bj' src="../../../images/cp_ysq.png"></image>
-      <view class='left_zb'>
-        <view class='dszka '>
-          <text></text>28
-          <text>元</text>
-        </view>
-        <view class='mdsy ycsdd'>满100元使用</view>
-        <view class='dp_kz ycsdd'>*店面赠送*</view>
-      </view>
-      <view class='dp_cent'>
-        <view class='dp_cf'>
-          <image src='../../../images/dp_wt.png'></image>徐记海鲜店麓谷店</view>
-        <view class='sj_rq'>2018/03/05-2018/04/05</view>
-        <view class='xz_tz'>仅限炒菜品类\t不含酒水\t节假日
-          <image src='../../../images/ic_more_down.png'></image>
-        </view>
-      </view>
-      <!-- <view class='lj_sy'>
-      <view class='sy_an'>立即使用</view>
-    </view> -->
-      <image class='yj_guoql' src='../../../images/ic_expired.png'></image>
-    </view>
-  </view>
-    <view style='height:16rpx;'></view>
-</view>
-<!-- 第三个卡片 -->
-<view class="dp_youhq {{currentTab==1 ? 'blckz' : ''}}">
-  <view class='hq_bujc'>
-    <view class='jxcc_dianp'>
-      <view>徐记海鲜店麓谷店</view>
-      <image src='../../../images/gk_lxdh.png'></image>
-    </view>
-    <view class='jc_dizhi'>
-      <image src='../../../images/gk_lxdz.png'></image>
-      <view>岳麓区麓谷大道83号</view>
-    </view>
-  </view>
-  <!-- 券样式 -->
-  <view class='jy_biank'>
+  <view class='jy_biank' wx:for="{{item.coupons}}" wx:key="{{coupon.id}}" wx:for-item="coupon">
     <view class='qdys mrt16'>
-      <image class='ds_bj' src="../../../images/xld_ysq.png"></image>
+      <image class='ds_bj' src="../../../images/{{coupon.tmplFileName}}.png"></image>
       <view class='left_zb'>
         <view class='dszka'>
-          <text></text>9.8
-          <text>折</text>
+          <text></text><text></text>{{coupon.discount}}
+          <text>{{coupon.discountType == "Amount" ? "元" : "折"}}</text>
         </view>
-        <view class='mdsy ycsdd'>满100元使用</view>
+        <view class='mdsy ycsdd'>满{{coupon.minAmount}}元使用</view>
         <view class='dp_kz ycsdd'>*店面赠送*</view>
       </view>
       <view class='dp_cent'>
         <view class='dp_cf'>
-          <image src='../../../images/dp_wt.png'></image>徐记海鲜店麓谷店</view>
+          <image src='../../../images/dp_wt.png'></image>店铺{{coupon.shopId}}</view>
         <view class='sj_rq'>2018/03/05-2018/04/05</view>
         <view class='xz_tz'>仅限炒菜品类\t不含酒水\t节假日
           <image src='../../../images/ic_more_down.png'></image>
@@ -138,7 +101,53 @@
   <view class='wc_jiay'>交易未完成
     <text>点击完成支付</text>
   </view>
+ </block>
+</view>
+<!-- 第三个卡片 -->
+<view class="dp_youhq {{currentTab=='EXPIRED' ? 'blckz' : ''}}">
+ <block wx:for="{{EXPIREDCoupons}}" wx:key="{{item.id}}">
+  <view class='hq_bujc'>
+    <view class='jxcc_dianp'>
+      <view>{{item.shop.alias}}</view>
+      <image src='../../../images/gk_lxdh.png'></image>
+    </view>
+    <view class='jc_dizhi'>
+      <image src='../../../images/gk_lxdz.png'></image>
+      <view>岳麓区麓谷大道83号</view>
+    </view>
+  </view>
   <!-- 券样式 -->
+  <view class='jy_biank' wx:for="{{item.coupons}}" wx:key="{{coupon.id}}" wx:for-item="coupon">
+    <view class='qdys mrt16'>
+      <image class='ds_bj' src="../../../images/{{coupon.tmplFileName}}.png"></image>
+      <view class='left_zb'>
+        <view class='dszka'>
+          <text></text>{{coupon.discount}}
+          <text>{{coupon.discountType == "Amount" ? "元" : "折"}}</text>
+        </view>
+        <view class='mdsy ycsdd'>满{{coupon.minAmount}}元使用</view>
+        <view class='dp_kz ycsdd'>*店面赠送*</view>
+      </view>
+      <view class='dp_cent'>
+        <view class='dp_cf'>
+          <image src='../../../images/dp_wt.png'></image>店铺{{coupon.shopId}}</view>
+        <view class='sj_rq'>2018/03/05-2018/04/05</view>
+        <view class='xz_tz' bindtap="ycxians">{{coupon.remark}}
+          <image src='../../../images/ic_more_down.png'></image>
+              <view class='ba_dtc' hidden='{{ycbial}}'>
+                <view class='ycxdd'>仅限炒菜类品 不含酒水 节假日通用 </view>
+                <view class='ycxdd'>1:仅限炒菜类品 不含酒水 节假日通 </view>
+                <view class='ycxdd'>2:请将优惠券出示给店家使用........ </view>
+              </view>
+        </view>
+      </view>
+      <view style='height:16rpx;'></view>
+      <image class='yj_guoql' src='../../../images/ic_expired.png'></image>
+    </view>
+  </view>
+  <view style='height:16rpx;'></view>
+ </block>
+  <!-- 券样式 
   <view class='jy_biank'>
     <view class='qdys mrt16 qdys1'>
       <image class='ds_bj' src="../../../images/cp_ysq.png"></image>
@@ -158,14 +167,12 @@
           <image src='../../../images/ic_more_down.png'></image>
         </view>
       </view>
-      <!-- <view class='lj_sy'>
-      <view class='sy_an'>立即使用</view>
-    </view> -->
       <image class='yj_guoql' src='../../../images/ic_expired2.png'></image>
     </view>
   </view>
   <view class='wc_jiay'>完成交易 微信支付108.00元</view>
-    <view style='height:16rpx;'></view>
+  <view style='height:16rpx;'></view>
+ -->
 </view>
 
 
@@ -186,8 +193,8 @@
   </view>
 </view>
 <!-- 优惠券使用通知 -->
-<view class='zzcm' hidden='{{dcklw}}'></view>
-<view class='yq_tongz' hidden='{{dcklw}}'>
+<view class='zzcm' hidden='{{!hasUsed}}'></view>
+<view class='yq_tongz' hidden='{{!hasUsed}}'>
   <image class='gb_tongz' src='../../../images/ic_close.png' bindtap='djbtnm'></image>
   <view class='gz_dingb'>优惠券使用通知</view>
   <image class='gz_fensq' src='../../../images/ic_logo_red.png'></image>

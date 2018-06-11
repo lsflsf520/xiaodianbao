@@ -1,7 +1,9 @@
-//index.js
-//获取应用实例
-const app = getApp()
 
+var NetUtil = require('../../../utils/netutil.js');
+var wxCharts = require('../../../libs/wxcharts/wxcharts.js');
+const app = getApp()
+var diyongCouponChart = null;
+var cashCouponChart = null;
 Page({
 
   /**
@@ -9,27 +11,10 @@ Page({
    */
   data: {
     array: ['徐记海鲜店麓谷店', '美国', '中国', '巴西', '日本'],
-    objectArray: [
-      {
-        id: 0,
-        name: '美国'
-      },
-      {
-        id: 1,
-        name: '中国'
-      },
-      {
-        id: 2,
-        name: '巴西'
-      },
-      {
-        id: 3,
-        name: '日本'
-      }
-    ],
+    
     index: 0,
-     currentTab: 0,  
-     currentTabr: 0,  
+    diyongTab: 0,  
+    cashTab: 0,  
   },
 
   toXq: function(e){
@@ -47,11 +32,77 @@ Page({
       url: '/pages/seller/wallet/wallet',
     })
   },
+  drawChart: function (canvasId, model) {
+    var windowWidth = 320;
+    try {
+      var res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+    } catch (e) {
+      console.error('getSystemInfoSync failed!');
+    }
+    
+    return new wxCharts({
+      canvasId: canvasId,
+      type: 'line',
+      categories: model.categories,
+      animation: true,
+      // background: '#f5f5f5',
+      series: [{
+        name: '已领取',
+        data: model.recvedDatas,
+        /*format: function (val, name) {
+          return val.toFixed(2);
+        }*/
+      }, {
+        name: '已使用',
+        data: model.usedDatas,
+        /*format: function (val, name) {
+          return val.toFixed(2);
+        }*/
+      }, {
+          name: '新用户',
+          data: model.newUserDatas,
+          /*format: function (val, name) {
+          return val.toFixed(2);
+        }*/
+      }, {
+        name: '老用户',
+        data: model.oldUserDatas,
+        /*format: function (val, name) {
+          return val.toFixed(2);
+        }*/
+      }],
+      xAxis: {
+        disableGrid: true
+      },
+      yAxis: {
+        title: '数量',
+        /*format: function (val) {
+          return val.toFixed(2);
+        },*/
+        min: 0
+      },
+      width: windowWidth,
+      height: 200,
+      dataLabel: false,
+      dataPointShape: true,
+      extra: {
+        lineStyle: 'curve'
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    NetUtil.loadRemoteData('/data/loadLatestDayData.do', { shopId: 100001, couponType: 'Diyong'}, function (result) {
+      diyongCouponChart = that.drawChart('diyongChart', result.model);
+    });
+    //var simulationData = this.createSimulationData();
+    NetUtil.loadRemoteData('/data/loadLatestDayData.do', { shopId: 100001, couponType: 'Cash' }, function (result) {
+      cashCouponChart = that.drawChart('cashChart', result.model);
+    });  
   },
 
   /**
@@ -115,28 +166,36 @@ Page({
   },
   
 /*选项卡*/
-  swichNav: function (e) {
+  diyongSwitch: function (e) {
 
     var that = this;
 
-    if (this.data.currentTab === e.target.dataset.current) {
+    if (this.data.diyongTab === e.target.dataset.current) {
       return false;
     } else {
       that.setData({
-        currentTab: e.target.dataset.current
+        diyongTab: e.target.dataset.current
       })
+      var url = this.data.cashTab == 1 ? '/data/loadLatestMonthData.do' : '/data/loadLatestDayData.do';
+      NetUtil.loadRemoteData(url, { shopId: 100001, couponType: 'Diyong' }, function (result) {
+        diyongCouponChart = that.drawChart('diyongChart', result.model);
+      });
     }
   },
-  swichNavr: function (e) {
+  cashSwitch: function (e) {
 
     var that = this;
     
-    if (this.data.currentTabr === e.target.dataset.currentsr) {
+    if (this.data.cashTab === e.target.dataset.currentsr) {
       return false;
     } else {
       that.setData({
-        currentTabr: e.target.dataset.currentsr
+        cashTab: e.target.dataset.currentsr
       })
+      var url = this.data.cashTab == 1 ? '/data/loadLatestMonthData.do' : '/data/loadLatestDayData.do';
+      NetUtil.loadRemoteData(url, { shopId: 100001, couponType: 'Cash' }, function (result) {
+        cashCouponChart = that.drawChart('cashChart', result.model);
+      });
     }
   }
 })

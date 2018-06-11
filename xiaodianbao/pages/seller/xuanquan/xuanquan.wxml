@@ -69,57 +69,37 @@
   </view>
 </view>
 
-<view style='height:10rpx'></view>
-<!-- 底部菜单 -->
-<view class='gd_gaod'></view>
-<view class='db_caid'>
-  <view class='id_dyg1 id_dyg' bindtap='toXq'>
-    <image src='../../../images/ic_coupon.png'></image>
-    <text>选券</text>
-  </view>
-  <view class='id_dyg2 ' bindtap='toIndex'>
-    <image src='../../../images/ic_home_gray.png'></image>
-    <text>首页</text>
-  </view>
-  <view class='id_dyg3' bindtap='toWallet'>
-    <image src='../../../images/ic_wallet_gray.png'></image>
-    <text>钱包</text>
-  </view>
-</view>
-
-
-
 <view class="zekqunl {{currentTab==1 ? 'xiansyc' : ''}}">
 
   <view class="container">
-    <view class=" {{item.isTouchMove ? 'item-active' : 'item'}}" style='{{cashList[index].zdx}}' bindtouchstart='touchstart' bindtouchmove='touchmove2' wx:for="{{cashList}}" wx:key='' data-index="{{index}}">
+    <view class=" {{item.isTouchMove ? 'item-active' : 'item'}}" style='{{cashList[index].zdx}}' bindtouchstart='touchstart' bindtouchmove='touchmove2' wx:for="{{cashList}}" wx:key='{{item.id}}' data-index="{{index}}">
       <view class='txt'>
 
-        <view class='qdys {{item.zl_ys}}'>
-          <image class='ds_bj' src='{{item.img_bg}}'></image>
+        <view class='qdys zkqy3  {{item.zl_ys}}'>
+          <image class='ds_bj' src='../../../images/{{item.tmplFileName}}.png'></image>
           <view class='zkouq'>
-            <text>{{item.zhe_sjb}}</text>
-            <image src='{{item.img_zhe}}'></image>
+            <text>抵</text>
+            <image src='../../../images/dz_zkqz.png'></image>
           </view>
           <view class='left_zb'>
             <view class='dszka'>
-              <text>{{item.dsyq}}</text>{{item.left_price}}
-              <text>{{item.left_zhe}}              </text>
+              <text></text>{{item.discount}}
+              <text>元</text>
             </view>
-            <view class='mdsy ycsdd'>{{item.left_man}}</view>
-            <view class='dp_kz ycsdd'>{{item.left_zeng}}</view>
+            <view class='mdsy ycsdd'>满{{item.minAmount}}元使用</view>
+            <view class='dp_kz ycsdd'>*店面赠送*</view>
           </view>
           <view class='dp_cent'>
             <view class='dp_cf'>
-              <image src='{{item.img_dian}}'></image>{{item.right_dian}}</view>
-            <view class='sj_rq'>{{item.right_data}}</view>
-            <view class='xz_tz' bindtap='ktzdf2' data-index="{{index}}">{{item.right_text}}
-              <image src='{{item.img_xl}}'></image>
+              <image src='../../../images/dp_wt.png'></image>徐记海鲜店麓谷店</view>
+            <view class='sj_rq'>2018/03/05-2018/04/05</view>
+            <view class='xz_tz' bindtap='ktzdf' data-index="{{index}}">{{item.remark}}
+              <image src='../../../images/ic_more_down.png'></image>
 
-              <view class='ba_dtc' wx:if="{{index == bcle2}}">
-                <view class='ycxdd'>{{item.tc_text01}}</view>
-                <view class='ycxdd'>{{item.tc_text02}} </view>
-                <view class='ycxdd'>{{item.tc_text03}} </view>
+              <view class='ba_dtc' wx:if="{{index == bcle}}">
+                <view class='ycxdd'>1:仅限炒菜类品 不含酒水 节假日通</view>
+                <view class='ycxdd'>2:请将优惠券出示给店家使用....... </view>
+                
               </view>
 
             </view>
@@ -130,7 +110,6 @@
         </view>
 
       </view>
-
       <view class='del_cs'>
         <view class='del del1' data-index="{{index}}">复制</view>
         <view class='del del2' data-index="{{index}}">停用</view>
@@ -162,3 +141,21 @@
   </view>
 </view>
 <!-- 没有优惠券 样式 结束-->
+
+<view style='height:10rpx'></view>
+<!-- 底部菜单 -->
+<view class='gd_gaod'></view>
+<view class='db_caid'>
+  <view class='id_dyg1 id_dyg' bindtap='toXq'>
+    <image src='../../../images/ic_coupon.png'></image>
+    <text>选券</text>
+  </view>
+  <view class='id_dyg2 ' bindtap='toIndex'>
+    <image src='../../../images/ic_home_gray.png'></image>
+    <text>首页</text>
+  </view>
+  <view class='id_dyg3' bindtap='toWallet'>
+    <image src='../../../images/ic_wallet_gray.png'></image>
+    <text>钱包</text>
+  </view>
+</view>

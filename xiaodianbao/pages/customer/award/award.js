@@ -1,5 +1,12 @@
 var NetUtil = require('../../../utils/netutil.js');
 
+if (!Array.prototype.shuffle) {
+  Array.prototype.shuffle = function () {
+    for (var j, x, i = this.length; i; j = parseInt(Math.random() * i), x = this[--i], this[i] = this[j], this[j] = x);
+    return this;
+  };
+}
+
 Page({
 
   /**
@@ -9,7 +16,7 @@ Page({
     turn: false, //控制是否翻转
     anmSwitch: false,
     time: "开始",
-    couponId: null,
+    selCouponIndex: -1,
     canRecv: false,
     hideCoupon: false,
     hideStartBtn: false,
@@ -19,12 +26,15 @@ Page({
     var that = this;
     that.setData({
       turn: true,
-    })
+    });
     setTimeout(function () {
       that.setData({
         anmSwitch: true,
-      })
-    }, 300)
+      });
+      var currCoupons = that.data.coupons;
+      currCoupons.shuffle();
+      that.setData({ coupons: currCoupons});
+    }, 300);
     var cd = 3;
     var sety = setInterval(function () {
       that.setData({
@@ -33,7 +43,7 @@ Page({
       cd--;
       if (that.data.time < 1) {
         that.setData({
-          time: "开始", 
+          time: "开始",
           anmSwitch: false,
         });
         setTimeout(function () {
@@ -50,20 +60,22 @@ Page({
     var that = this;
     if (that.data.canRecv) {
       var couponId = e.currentTarget.dataset.couponid;
+      var selCouponIndex = e.currentTarget.dataset.couponIndex;
       that.setData({
         couponId: couponId,
-        hideStartBtn: true, 
+        hideStartBtn: true,
         hideCoupon: true,
       })
-      
+
       NetUtil.loadRemoteData('/uc/coupon/recvCoupon.do?shopCouponId=' + couponId, null, function (result) {
         var recvedCouponId = result.model;
         that.setData({
+          selCouponIndex: selCouponIndex,
           recved: true
         })
       });
-      
-    } 
+
+    }
 
   },
   zxquanb: function () {

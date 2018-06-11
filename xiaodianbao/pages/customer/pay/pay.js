@@ -1,3 +1,5 @@
+var NetUtil = require('../../../utils/netutil.js');
+
 Page({
 
   /**
@@ -13,7 +15,7 @@ Page({
       dckf: e.target.dataset.fkfans,
     })
   },
-  tyxiey: function () {
+  agree: function () {
     var th = this;
     if (th.data.tx_src == '../../../images/ic_sel_green.png') {
       th.setData({
@@ -24,5 +26,30 @@ Page({
         tx_src: '../../../images/ic_sel_green.png'
       })
     }
+  },
+  formsubmit: function(e) {
+    var formData = e.detail.value;
+    formData.userCouponId = this.data.couponId;
+    var th = this;
+    NetUtil.loadRemoteData('/uc/coupon/useCoupon.do', formData, function(result){
+      wx.showToast({
+        title: '该券已使用',
+        icon: 'success',
+        duration: 2000
+      });
+      setTimeout(function(){
+        wx.redirectTo({
+          url: '../couponbag/couponbag',
+        })
+      }, 2000);
+    });
+  },
+  onLoad: function (options) {
+    var couponId = options.couponId;
+    var shopName = options.shopName;
+    this.setData({
+      shopName: shopName,
+      couponId: couponId
+    })
   }
 })
